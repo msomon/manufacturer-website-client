@@ -1,11 +1,11 @@
 import React from 'react';
-import footer from '../../assets/images/footer.png';
+import footer from '../images/footer1.webp'
 
 const Footer = () => {
     return (
         <footer style={{
-            background: `url(${footer})`,
-            backgroundSize: 'cover'
+            // background: `url(${footer})`,
+            // backgroundSize: 'cover'
         }} className="p-10">
             <div className='footer'>
                 <div>

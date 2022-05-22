@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
+import auth from '../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import useToken from '../../hooks/useToken';
+// import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -16,26 +16,26 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [token] = useToken(user || gUser);
+    // const [token] = useToken(user || gUser);
 
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    useEffect( () =>{
-        if (token) {
-            navigate(from, { replace: true });
-        }
-    }, [token, from, navigate])
+    // useEffect( () =>{
+    //     if (token) {
+    //         navigate(from, { replace: true });
+    //     }
+    // }, [token, from, navigate])
 
-    if (loading || gLoading) {
-        return <Loading></Loading>
-    }
+    // if (loading || gLoading) {
+    //     return <Loading></Loading>
+    // }
 
-    if(error || gError){
-        signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
-    }
+    // if(error || gError){
+    //     signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
+    // }
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
@@ -100,7 +100,7 @@ const Login = () => {
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
-                    <p><small>New to Doctors Portal <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+                    <p><small>New to Electronics Manufacturer ?? <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
