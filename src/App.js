@@ -11,7 +11,7 @@ import SignUp from './Login/SignUp';
 function App() {
   
   return (
-    <div>
+    <div className='mx-20'>
       <Navbar></Navbar>
 <Routes>
 <Route path='/' element={<Home/>}></Route>
