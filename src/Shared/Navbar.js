@@ -17,13 +17,8 @@ const Navbar = () => {
         <li><NavLink to="/home">Home</NavLink></li>
         <li><NavLink to="/blogs">Blogs</NavLink></li>
         <li><NavLink to="/reviews">Reviews</NavLink></li>
-        <li><NavLink to="/portfolio">My Portfolio</NavLink></li>
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
         <li><NavLink to="/businesssummary">Bussiness Summary</NavLink></li>
-        {
-            user && <li><NavLink to="/myprofile">My Profile</NavLink></li>
-        }
-    
         <li>{user ? <button className="btn btn-ghost text-xl" onClick={logout} >Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
     </>
     return (

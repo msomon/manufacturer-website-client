@@ -11,10 +11,11 @@ import Purchage from '../src/Pages/Home/Purchage'
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Myorders from './Pages/Dashboard/Myorders';
 import NotFound from './Pages/NotFound/NotFound';
+import RequireAuth from './Login/RequireAuth';
 function App() {
   
   return (
-    <div className='mx-20'>
+    <div className='mx-20 mt-5'>
       <Navbar></Navbar>
 <Routes>
 <Route path='/' element={<Home/>}></Route>
@@ -22,7 +23,12 @@ function App() {
 <Route path='/purchage/:id' element={<Purchage/>}></Route>
 <Route path='/login' element={<Login/>}></Route>
 <Route path='/signup' element={<SignUp/>}></Route>
-<Route path='/dashboard' element={<Dashboard/>}></Route>
+<Route path='/dashboard' element={<RequireAuth>
+  {<Dashboard/>}
+</RequireAuth>}>
+
+
+</Route>
 <Route path='/myorders' element={<Myorders/>}></Route>
 <Route path='*' element={<NotFound/>}></Route>
 
