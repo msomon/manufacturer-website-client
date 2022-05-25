@@ -29,32 +29,38 @@ const onSubmit = async (data) => {
     console.log(data.orderquantity,minimumOrder,availableQuantity);
    
 
-if(data.orderquantity > minimumOrder && data.orderquantity < availableQuantity){
+if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
     
-    const booking = {
-        img :img ,
-        name : user.displayName ,
-       email : user.email ,
-       address:data.address ,
-       number : data.number ,
-       quantity : data.orderquantity
-   
-   }
-   const url = 'http://localhost:5000/myorders';
-   
-   fetch(url,{
-       method:'POST',
-       headers:{
-          'content-type': 'application/json'
-       },
-       body: JSON.stringify(booking)
-   })
-   .then(res=>res.json())
-   .then(resu=>console.log(resu))
-     
+    return toast(' quantity Must be bigger minimumorder and lower then available quantity') 
+    
+    
     }else{
-     toast(' quantity Must be bigger minimumorder and lower then available quantity') 
-     return
+
+        const totalPrice = (quantity * price)
+        const booking = {
+
+            img :img ,
+            user : user.displayName ,
+           email : user.email ,
+           address:data.address ,
+           number : data.number ,
+           quantity : data.orderquantity ,
+           price: price ,
+           totalPrice:totalPrice ,
+           name : name 
+       }
+       const url = 'http://localhost:5000/myorders';
+       
+       fetch(url,{
+           method:'POST',
+           headers:{
+              'content-type': 'application/json'
+           },
+           body: JSON.stringify(booking)
+       })
+       .then(res=>res.json())
+       .then(resu=>console.log(resu))
+         
     }
     
     
