@@ -14,6 +14,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import RequireAuth from './Login/RequireAuth';
 import MyHistory from './Pages/Dashboard/DashboardHome';
 import Users from './Pages/Dashboard/Users';
+import Addproduct from './Pages/Dashboard/Addproduct';
 function App() {
   
   return (
@@ -32,6 +33,7 @@ function App() {
 <Route index element={<MyHistory/>}></Route>
 <Route path='dashboard/myorders' element={<Myorders/>}></Route>
 <Route path='dashboard/users' element={<Users/>}></Route>
+<Route path='dashboard/addproduct' element={<Addproduct/>}></Route>
 
 
 </Route>

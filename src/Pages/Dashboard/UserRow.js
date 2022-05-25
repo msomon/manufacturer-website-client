@@ -2,7 +2,9 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const UserRow = ({ user, refetch }) => {
-    const { email, role ,name } = user;
+    const { email,role ,name } = user;
+    // console.log(user);
+
     const makeAdmin = () => {
         fetch(`http://localhost:5000/users/admin/${email}`, {
             method: 'PUT',
@@ -10,7 +12,7 @@ const UserRow = ({ user, refetch }) => {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => {
+          .then(res => {
                 if(res.status === 403){
                     toast.error('Failed to Make an admin');
                 }
@@ -23,12 +25,16 @@ const UserRow = ({ user, refetch }) => {
 
             })
     }
+
     return (
         <tr>
             <th>1</th>
             <td>{name}</td>
             <td>{email}</td>
-            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs btn-secondary">Make Admin</button>}</td>
+            
+            <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs btn-secondary">Make Admin</button> :
+            <button className="btn btn-xs btn-secondary">Already Admin</button>
+            }</td>
             <td><button className="btn btn-xs btn-primary">Remove User</button></td>
         </tr>
     );
