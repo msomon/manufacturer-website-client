@@ -7,7 +7,10 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Login from './Login/Login';
 import SignUp from './Login/SignUp';
-
+import Purchage from '../src/Pages/Home/Purchage'
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Myorders from './Pages/Dashboard/Myorders';
+import NotFound from './Pages/NotFound/NotFound';
 function App() {
   
   return (
@@ -16,15 +19,18 @@ function App() {
 <Routes>
 <Route path='/' element={<Home/>}></Route>
 <Route path='/home' element={<Home/>}></Route>
+<Route path='/purchage/:id' element={<Purchage/>}></Route>
 <Route path='/login' element={<Login/>}></Route>
 <Route path='/signup' element={<SignUp/>}></Route>
+<Route path='/dashboard' element={<Dashboard/>}></Route>
+<Route path='/myorders' element={<Myorders/>}></Route>
+<Route path='*' element={<NotFound/>}></Route>
 
 
 
   
 </Routes>
 
-      <h1>hallow</h1>
       <Footer></Footer>
      <ToastContainer/>
     </div>

@@ -9,7 +9,7 @@ const Home = () => {
     <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-7 my-16'>
   
       {
-        data?.map(tool=><Tool key={tool._id} tool={tool}></Tool>)
+        data?.slice(0,6).reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
       }
     </div>
   );
