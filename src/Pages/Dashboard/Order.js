@@ -2,7 +2,7 @@ import React from 'react';
 
 const Order = ({order}) => {
   const {name,user,img,quantity,price,totalPrice,description,_id}= order
-  console.log(order);
+  // console.log(order);
   return (
     <div class="card w-full  bg-base-100 shadow-xl ">
   <figure class="px-10 pt-10">

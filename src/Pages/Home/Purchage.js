@@ -36,7 +36,7 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
     
     }else{
 
-        const totalPrice = (quantity * price)
+        const totalPrice = (data.orderquantity * price)
         const booking = {
 
             img :img ,
@@ -90,18 +90,6 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
             <h2 className="text-center text-2xl font-bold">Order Please</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Img Url</span>
-                    </label>
-                    <input
-                        type="text"
-                        placeholder="image url"
-                        className="input input-bordered w-full max-w-xs" 
-                        value={img} readOnly
-                    />
-                    
-                </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Name</span>
@@ -173,7 +161,7 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
                     <input
                         type="number"
                         placeholder="Your Order Quantity"
-                        className="input input-bordered w-full max-w-xs mb-2"
+                        className="input input-bordered w-full max-w-xs mb-2" defaultValue={minimumOrder}
                         {...register("orderquantity", {
                             required: {
                                 value: true,

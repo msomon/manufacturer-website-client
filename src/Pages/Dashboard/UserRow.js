@@ -2,9 +2,9 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const UserRow = ({ user, refetch }) => {
-    const { email, role } = user;
+    const { email, role ,name } = user;
     const makeAdmin = () => {
-        fetch(`https://sheltered-woodland-20906.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:5000/users/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -26,9 +26,10 @@ const UserRow = ({ user, refetch }) => {
     return (
         <tr>
             <th>1</th>
+            <td>{name}</td>
             <td>{email}</td>
-            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
-            <td><button className="btn btn-xs">Remove User</button></td>
+            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs btn-secondary">Make Admin</button>}</td>
+            <td><button className="btn btn-xs btn-primary">Remove User</button></td>
         </tr>
     );
 };
