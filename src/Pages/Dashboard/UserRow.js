@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const UserRow = ({ user, refetch }) => {
-    const { email,role ,name } = user;
+    const { email,role} = user;
     // console.log(user);
 
     const makeAdmin = () => {
@@ -29,7 +29,7 @@ const UserRow = ({ user, refetch }) => {
     return (
         <tr>
             <th>1</th>
-            <td>{name}</td>
+           
             <td>{email}</td>
             
             <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs btn-secondary">Make Admin</button> :

@@ -10,30 +10,30 @@ import Loading from '../../Shared/Loading';
 
 const Purchage = () => {
   const {id} = useParams()
-  const { register,watch, formState: { errors }, handleSubmit } = useForm();
+  const { register,watch ,formState: { errors }, handleSubmit } = useForm();
   const [user] =useAuthState(auth)
-  const  [quantity,setQuantity] = useState(true)
+  const [quantity,setQuantity]= useState(false)
   
   const {data,isLoading}=useQuery('tool',()=>
   fetch(`http://localhost:5000/tools/${id}` ).then(res => res.json())
   )
-
+  
   if(isLoading){
       return <Loading></Loading>
     }
-    
+
+
     const { availableQuantity,minimumOrder,price ,img,description,name} = data
-    
+
     
 const onSubmit = async (data) => {
-    console.log(data.orderquantity,minimumOrder,availableQuantity);
-   
+    // console.log(data.orderquantity,minimumOrder,availableQuantity);
+    
 
 if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
     
-    return toast(' quantity Must be bigger minimumorder and lower then available quantity') 
-    
-    
+    return toast(' quantity Must be bigger minimumorder and lower then available quantity')
+     
     }else{
 
         const totalPrice = (data.orderquantity * price)
@@ -64,8 +64,7 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
     }
     
     
-    
- 
+
    
 }
 
@@ -166,17 +165,27 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
                             required: {
                                 value: true,
                                 message: 'Order is Required'
-                            }
+                            },
+                            max:{
+                                value:`${data.availableQuantity}`,
+                            message:'less then available quantity require'
+                        },
+                            min:{
+                                value:`${data.minimumOrder}`,
+                            message:'more then available quantity require'
+                        }
+
                         })}
                     />
                     <label className="label">
                                 {errors.orderquantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.orderquantity.message}</span>}
-                            </label>
+                                {errors.orderquantity?.type === 'max' && <span className="label-text-alt text-sm text-red-500">{errors.orderquantity.message}</span>}
+                                {errors.orderquantity?.type === 'min' && <span className="label-text-alt text-sm text-red-500">{errors.orderquantity.message}</span>}
+                  </label>
             
                 </div>
-                <input className='btn w-full max-w-xs text-white' type="submit" value="Purchage" /> 
-                {/* {quantity ? <input   className='btn w-full max-w-xs text-white' type="submit" value="Purchage" />  :
-                <input disabled  className='btn w-full max-w-xs text-white' type="submit" value="Purchage2" />} */}
+                <input disabled={quantity} className='btn w-full max-w-xs text-white' type="submit" value="Purchage" /> 
+        
             </form>
         </div>
     </div>
