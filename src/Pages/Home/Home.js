@@ -9,7 +9,7 @@ import './Home.css'
 import Reviews from './Reviews'
 
 const Home = () => {
-  const {data} =UseHooks()
+  const {tools,setTools} =UseHooks()
  
 
   // console.log(data);
@@ -59,7 +59,7 @@ const Home = () => {
    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-7 my-16'>
   
       {
-        data?.slice(-6).reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
+        tools?.slice(-6).reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
       }
   </div> 
   

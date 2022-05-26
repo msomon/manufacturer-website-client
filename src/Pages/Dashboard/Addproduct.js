@@ -23,7 +23,7 @@ const Addproduct = (event) => {
 
 
   return (
-    <div className=' mx-auto card w-96 bg-base-100 shadow-xl px-6 mt-8'>
+    <div className='h-80vh mx-auto card w-96 bg-base-100 shadow-xl px-6 mt-8 mb-10'>
       <h1 className='mt-3 text-2xl mb-4 text-secondary'> 🎁 Please Add Product 🎁 </h1>
       <form className='flex flex-col gap-2 ' onSubmit={handleSubmit(onSubmit)}>
       <label class="label">
@@ -50,7 +50,7 @@ const Addproduct = (event) => {
     <span class="label-text">Product Description</span>
   </label>
       <input {...register("description")} type="text" placeholder="Type here description" class="input input-bordered w-full max-w-xs" />
-      <input className='btn btn-sm btn-primary w-40 mx-auto mb-4' type="submit" value='Add Product' />
+      <input className='btn btn-sm btn-primary w-40 mx-auto mb-7 mt-3' type="submit" value='Add Product' />
     </form>
     </div>
   );

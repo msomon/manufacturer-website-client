@@ -1,7 +1,30 @@
 import React from 'react';
 
-const Product = ({product}) => {
+const Product = ({product ,setTools}) => {
   const {name,img,availableQuantity,minimumOrder,price,description,_id}=product
+
+  const deleteallproduct = id =>{
+    
+    const proceed = window.confirm('are you sure')
+    if(proceed){
+      // console.log('user id',id);
+    const url = `http://localhost:5000/deleteallproduct/${id}` ;
+
+    fetch(url,{
+    method:'DELETE'
+    })
+    .then(data =>{
+      if(data.deletedCount > 0){
+        const remaining = product.filter(inventory => inventory._id !== id)
+        // setOrders(remaining)
+        setTools(remaining)
+      }
+    })
+    }
+
+  }
+
+
   return (
     <div class="card w-full  bg-base-100 shadow-xl ">
   <figure class="px-10 pt-10">
@@ -14,7 +37,7 @@ const Product = ({product}) => {
     <h2 class="card-title">Price: {price}</h2>
     <p>Description: {description}</p>
     <div class="card-actions">
-      
+      <button className='btn btn-secondory' onClick={()=>deleteallproduct(_id)} >Delete Product</button>
     </div>
   </div>
 </div>

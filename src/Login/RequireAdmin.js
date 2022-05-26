@@ -7,7 +7,7 @@ import useAdmin from '../Hooks/useAdmin';
 import { signOut } from 'firebase/auth';
 
 const RequireAdmin = ({children}) => {
-    console.log(children);
+    // console.log(children);
     const [user, loading] = useAuthState(auth);
     const [admin, adminLoading] = useAdmin(user);
     const location = useLocation();

@@ -6,7 +6,9 @@ import Order from './Order';
 const Myorders = () => {
   const [user]=useAuthState(auth)
   const [orders,setOrders] =useState([])
+
   useEffect(() => {
+
     if (user) {
         fetch(`http://localhost:5000/myorders?email=${user.email}`, {
             method: 'GET',
@@ -16,18 +18,18 @@ const Myorders = () => {
         })
           .then(res =>res.json())
             .then(data => {
-     console.log(data);
+    //  console.log(data);
        setOrders(data);
             });
     }
-}, [user])
+}, [orders])
 
 
 
   return (
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 ml-5 mt-7 gap-4'>
+    <div className='grid lg:grid-cols-3 md:grid-cols-2 ml-5 mt-7 gap-5 mb-5'>
       {
-        orders?.map(order=><Order key={order._id} order={order}></Order>)
+        orders?.map(order=><Order setOrders={setOrders} key={order._id} order={order}></Order>)
       }
     </div>
   );

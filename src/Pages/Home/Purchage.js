@@ -74,7 +74,7 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
 
 
   return (
-    <div className='w-full  grid lg:grid-cols-2   gap-10 justify-between mt-10'>
+    <div className='w-full  grid lg:grid-cols-2   gap-10 justify-between mt-8'>
        <div class="card w-full  bg-base-100 shadow-2xl shadow-2yl ">
   <figure class="px-10 pt-10">
     <img src={img} alt="Shoes" class="rounded-xl" />

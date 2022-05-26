@@ -15,18 +15,18 @@ const ManageAllOrders = () => {
         })
           .then(res =>res.json())
             .then(data => {
-     console.log(data);
+    //  console.log(data);
        setOrders(data);
             });
    
-}, [admin])
+}, [orders])
 
 
 
   return (
     <div className='grid lg:grid-cols-3 md:grid-cols-2 ml-5 mt-7 gap-4'>
       {
-        orders?.map(order=><AllOrder key={order._id} order={order}></AllOrder>)
+        orders?.map(order=><AllOrder key={order._id} setOrders={setOrders} order={order}></AllOrder>)
       }
     </div>
   );
