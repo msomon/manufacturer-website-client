@@ -18,10 +18,11 @@ import Addreview from './Pages/Dashboard/Addreview';
 import RequireAdmin from './Login/RequireAdmin';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
-import MyProfile from './Pages/Dashboard/MyProfile';
+import MyProfile from './Pages/Home/MyProfile';
 import Reviews from './Pages/Home/Reviews';
 import DashboardHome from './Pages/Dashboard/DashboardHome';
-import MyPortfolio from './Pages/Dashboard/MyPortfolio';
+import MyPortfolio from './Pages/Home/MyPortfolio';
+import UpdateMyProfile from './Pages/Home/UpdateMyProfile';
 function App() {
   
   return (
@@ -32,6 +33,7 @@ function App() {
 <Route path='/home' element={<Home/>}></Route>
 <Route path='/myportfolio' element={<MyPortfolio/>}></Route>
 <Route path='/myProfile' element={<MyProfile/>}></Route>
+<Route path='/updatemyprofile' element={<UpdateMyProfile/>}></Route>
 <Route path='/purchage/:id' element={<RequireAuth>
   <Purchage/>
 </RequireAuth>}></Route>
