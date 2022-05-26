@@ -9,14 +9,14 @@ const Addreview = () => {
   const { register,reset,formState: { errors }, handleSubmit } = useForm();
 
   const onSubmit = data => {
-    console.log(data);
-
+    // console.log(data);
     const review = {
       email :user.email ,
       review : data.rating ,
       comment : data.comment
     }
-  
+    
+    // console.log(review);
 
   const url = 'http://localhost:5000/addreview';
        
@@ -49,7 +49,7 @@ const Addreview = () => {
       <label class="label">
     <span class="label-text">Rating</span>
   </label>
-      <input {...register("Rating" ,{
+      <input {...register("rating" ,{
          max:{
           value:'5',
       message:'× You Can Not Give Over 5 Star × '
@@ -63,7 +63,7 @@ const Addreview = () => {
       <label class="label">
     <span class="label-text">Comment</span>
   </label>
-      <input {...register("Comment")} type="text" placeholder="Type here description" class="input input-bordered w-full max-w-xs" required />
+      <input {...register("comment")} type="text" placeholder="Type here description" class="input input-bordered w-full max-w-xs" required />
       <input className='btn btn-sm btn-primary w-40 mx-auto mb-4 mt-3' type="submit" value='Add Review' />
     </form>
     </div>
