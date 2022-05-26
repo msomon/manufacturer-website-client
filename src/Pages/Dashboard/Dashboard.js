@@ -20,6 +20,7 @@ const Dashboard = () => {
                 <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to="dashboard">My Profile</Link></li>
+                    <li><NavLink to="dashboard/portfolio">My Portfolio</NavLink></li>
                     {
                      user && <>
                     <li><NavLink to="dashboard/myorders">My Orders</NavLink></li>
@@ -27,14 +28,18 @@ const Dashboard = () => {
                         </>
                     }
 
-                    <li><NavLink to="dashboard/addproduct">Add Product</NavLink></li>
-                    { admin && <li><Link to="dashboard/users">Users</Link></li>}
-                    
-                    <li><NavLink to="dashboard/portfolio">My Portfolio</NavLink></li>
-                    <li><NavLink to="dashboard/manageorders">Manage All Orders</NavLink></li>
-                    <li><NavLink to="dashboard/manageproducts">Manage Products</NavLink></li>
-                </ul>
 
+                    { admin && <>
+                    <li><Link to="dashboard/users">Users</Link></li>
+                    <li><NavLink to="dashboard/addproduct">Add Product</NavLink></li>
+                    <li><NavLink to="dashboard/manageorders">Manage All Orders</NavLink></li>
+                    <li><NavLink to="dashboard/manageproducts">Manage All Products</NavLink></li>
+                    </>
+                    
+                    }
+                    
+                </ul>
+               
             </div>
         </div>
     );

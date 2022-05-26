@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
 
 const Navbar = () => {
@@ -38,7 +38,10 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
+
             </div>
+              
+            <label for="dashboard-sidebar" class="btn btn-secondary drawer-button lg:hidden">Dashboard</label>
         </div>
     );
 };

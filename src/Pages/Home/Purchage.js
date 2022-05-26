@@ -10,9 +10,9 @@ import Loading from '../../Shared/Loading';
 
 const Purchage = () => {
   const {id} = useParams()
-  const { register,watch ,formState: { errors }, handleSubmit } = useForm();
+  const { register,reset ,formState: { errors }, handleSubmit } = useForm();
   const [user] =useAuthState(auth)
-  const [quantity,setQuantity]= useState(false)
+//   const [quantity,setQuantity]= useState(false)
   
   const {data,isLoading}=useQuery('tool',()=>
   fetch(`http://localhost:5000/tools/${id}` ).then(res => res.json())
@@ -59,7 +59,11 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
            body: JSON.stringify(booking)
        })
        .then(res=>res.json())
-       .then(resu=>console.log(resu))
+       .then(resu=>{
+        //    console.log(resu)
+        reset()
+           toast('purchage confirm')
+        })
          
     }
     
@@ -184,7 +188,7 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
                   </label>
             
                 </div>
-                <input disabled={quantity} className='btn w-full max-w-xs text-white' type="submit" value="Purchage" /> 
+                <input  className='btn w-full max-w-xs text-white' type="submit" value="Purchage" /> 
         
             </form>
         </div>

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 const Addproduct = (event) => {
-  const { register, handleSubmit } = useForm();
+  const { register,reset, handleSubmit } = useForm();
   const onSubmit = data => {
     console.log(data)
     const url = 'http://localhost:5000/addproduct'
@@ -16,6 +16,7 @@ const Addproduct = (event) => {
     }) 
     .then(res=>res.json())
     .then(result=>console.log(result))
+    reset()
     toast('Add Item Succesfully')
   
   }

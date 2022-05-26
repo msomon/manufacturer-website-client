@@ -6,6 +6,7 @@ import img1 from '../../images/carosel1.webp'
 import img2 from '../../images/carosel4.webp'
 import img3 from '../../images/carosel3.webp'
 import './Home.css'
+import Reviews from './Reviews'
 
 const Home = () => {
   const {data} =UseHooks()
@@ -47,7 +48,7 @@ const Home = () => {
     />
 
     <Carousel.Caption>
-      <h3 className='text-green-400 text-2xl'>Your Opinion My Commitment</h3>
+      <h3 className='text-green-400 ext-2xl'>Your Opinion My Commitment</h3>
       <p>Highly Good Maintainense </p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -60,7 +61,9 @@ const Home = () => {
       {
         data?.slice(-6).reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
       }
-    </div>
+  </div> 
+  
+ <Reviews></Reviews>
 
  </div>
 

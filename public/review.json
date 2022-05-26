@@ -1,0 +1,26 @@
+[
+  {
+    "email":"hasan03@gmail.com",
+    "review":"5",
+    "comment":"very good support"
+   
+   },
+  {
+    "email":"lokman@gmail.com",
+    "review":"4",
+    "comment":"very good product"
+   
+   },
+  {
+    "email":"kamal2@gmail.com",
+    "review":"5",
+    "comment":"very good service"
+   
+   },
+  {
+    "email":"jamal2@gmail.com",
+    "review":"4",
+    "comment":"nice service and production"
+   
+   }
+]
