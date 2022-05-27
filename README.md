@@ -1,4 +1,26 @@
+
+# PROJECT NAME :ELECTRONICS MANUFACTURER
+
+## LIVE  WESITE LINK :https://electronics-manufacturer.web.app/
+
+## SERVER SITE LINK :https://github.com/programming-hero-web-course1/manufacturer-website-server-side-msomon
+
+## USAGES TECHNOLOGY
+
+* bootstrap
+* daisyui
+* firebase
+* jsonwebtoken
+* react-firebase-hooks
+* react-hook-form
+* react-query
+* react-toastify
+
+
+
+
 # Getting Started with Create React App
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
