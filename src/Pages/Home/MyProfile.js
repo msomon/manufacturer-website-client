@@ -33,7 +33,7 @@ const MyProfile = () => {
 // console.log(users);
 
   return (
-    <div className='w-3/4 mx-auto  gap-10 justify-between mt-8'>
+    <div className='h-full w-3/4 mx-auto  gap-10 justify-between mt-8 mb-5'>
       
     <div class="card w-full  bg-base-100 shadow-2xl shadow-2yl "><h3 className='text-center mt-3 text-3xl text-green-500 '>🌹 My Profile 🌹</h3>
 <div class="card-body items-center text-center">

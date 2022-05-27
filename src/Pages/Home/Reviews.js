@@ -21,7 +21,7 @@ const Reviews = () => {
 
 // console.log(reviews);
   return (
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 ml-5 mt-7 gap-4'>
+    <div className='grid lg:grid-cols-3 md:grid-cols-2 ml-5 mt-7 gap-4 mb-5'>
       {
         reviews?.slice(-reviews.length).reverse().map(review=><Review key={review._id} reviewa={review}></Review>)
       }

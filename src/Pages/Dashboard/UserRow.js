@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const UserRow = ({ user, refetch }) => {
+const UserRow = ({ user, refetch ,index }) => {
     const { email,role} = user;
     // console.log(user);
 
@@ -28,7 +28,7 @@ const UserRow = ({ user, refetch }) => {
 
     return (
         <tr>
-            <th>1</th>
+            <th>{index +1 }</th>
            
             <td>{email}</td>
             
