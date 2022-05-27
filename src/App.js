@@ -23,6 +23,7 @@ import Reviews from './Pages/Home/Reviews';
 import DashboardHome from './Pages/Dashboard/DashboardHome';
 import MyPortfolio from './Pages/Home/MyPortfolio';
 import UpdateMyProfile from './Pages/Home/UpdateMyProfile';
+import BusinessSummary from './Pages/Home/BusinessSummary';
 function App() {
   
   return (
@@ -32,6 +33,7 @@ function App() {
 <Route path='/' element={<Home/>}></Route>
 <Route path='/home' element={<Home/>}></Route>
 <Route path='/myportfolio' element={<MyPortfolio/>}></Route>
+<Route path='/businesssummary' element={<BusinessSummary/>}></Route>
 <Route path='/myProfile' element={<MyProfile/>}></Route>
 <Route path='/updatemyprofile' element={<UpdateMyProfile/>}></Route>
 <Route path='/purchage/:id' element={<RequireAuth>

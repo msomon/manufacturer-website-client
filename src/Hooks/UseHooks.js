@@ -5,7 +5,13 @@ const UseHooks = () => {
 
 
 useEffect( ()=>{
-  fetch('http://localhost:5000/tools')
+  fetch('http://localhost:5000/tools',
+  {
+    method: 'GET',
+    headers: {
+        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    }
+})
   .then(res => res.json())
   .then(data=>setTools(data))
 

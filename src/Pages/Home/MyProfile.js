@@ -2,16 +2,32 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../../Shared/Loading'
+
 
 const MyProfile = () => {
   const [users] = useAuthState(auth)
   const [profiles,setProfiles] = useState([]);
+  const [loading,setLoading] = useState(false);
   
   useEffect( ()=>{
-    fetch(`http://localhost:5000/user/myprofile/${users?.email}`)
+    // setLoading(true)
+    fetch(`http://localhost:5000/user/myprofile/${users?.email}`, {
+      method: 'GET',
+      headers: {
+          'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+      }
+  })
     .then(res =>res.json())
-    .then(data=>setProfiles(data))
+    .then(data=>{
+      setLoading(false)
+      setProfiles(data)
+    })
   },[profiles]);
+
+  if(loading){
+    return <Loading> </Loading>
+  }
      
 
 // console.log(users);

@@ -7,7 +7,13 @@ const MyPortfolio = () => {
   const [portfolio,setPortfolio] = useState([]);
 
   useEffect( ()=>{
-    fetch(`http://localhost:5000/user/myprofile/${users?.email}`)
+    fetch(`http://localhost:5000/user/myprofile/${users?.email}`,
+    {
+      method: 'GET',
+      headers: {
+          'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+      }
+  })
     .then(res =>res.json())
     .then(data=>setPortfolio(data))
   },[portfolio]);

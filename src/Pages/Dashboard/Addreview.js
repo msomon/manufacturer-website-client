@@ -68,7 +68,7 @@ const Addreview = () => {
       <input {...register("comment")} type="text" placeholder="Type here description" class="input input-bordered w-full max-w-xs" required />
      
      {
-      admin && 
+      !admin && 
        <input className='btn btn-sm btn-primary w-40 mx-auto mb-8 mt-3 ' type="submit" value='Add Review' /> 
 
      }
