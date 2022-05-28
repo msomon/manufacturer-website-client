@@ -1,74 +1,52 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
-import auth from '../firebase.init';
-import { useForm } from "react-hook-form";
-import Loading from '../Shared/Loading';
-import { Link, useNavigate } from 'react-router-dom';
-import useToken from '../Hooks/useToken';
+import { useForm } from 'react-hook-form';
+import { useQuery } from 'react-query';
+import { useParams } from 'react-router-dom';
+import Loading from '../../Shared/Loading';
 
+const Payment = () => {
+  const{id} =useParams()
+  const { register, formState: { errors }, handleSubmit } = useForm();
 
-const SignUp = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth);
-
-    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
-    const [token]  = useToken(user || gUser);
-
-    const navigate = useNavigate();
-
-    let signInError;
-
-    if (loading || gLoading || updating) {
-        return <Loading></Loading>
+  const {data,isLoading}=useQuery(['order',id],()=>
+  fetch(`http://localhost:5000/myorder/payment/${id}`,
+  {
+    method: 'GET',
+    headers: {
+        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
     }
-
-    if (error || gError || updateError) {
-        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
+}).then(res => res.json())
+  )
+ 
+  if(isLoading){
+      return <Loading></Loading>
     }
+    const {name,user,img,totalPrice ,_id}= data
 
-    if (token) {
-        navigate('/home');
-    }
+const onSubmit=()=>{
 
-    const onSubmit = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password);
-        await updateProfile({ displayName: data.name });
-        console.log('update done');
-        
-    }
-    return (
-        <div className='flex h-screen justify-center items-center mt-28'>
+}
+
+// console.log(data);
+  return (
+    <div className='flex gap-5 flex-row mt-5 mb-5'>
+
+<div class="card w-3/5 bg-base-100 shadow-xl ">
+  <figure class="px-10 pt-10">
+    <img src={img} alt="Shoes" class="rounded-xl" />
+  </figure>
+  <div class="card-body items-center text-center">
+    <h2 class="card-title">Hallow : {user}</h2>
+    <h2 class="card-title">Please Pay For : {name}</h2>
+    <h2 class="card-title">Total Price: {totalPrice}</h2>
+  </div>
+</div>
+
+<div className='flex mt-0  justify-center  '>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Sign Up</h2>
+                    <h2 className="text-center text-2xl font-bold">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="Your Name"
-                                className="input input-bordered w-full max-w-xs"
-                                {...register("name", {
-                                    required: {
-                                        value: true,
-                                        message: 'Name is Required'
-                                    }
-                                })}
-                            />
-                            <label className="label">
-                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                            </label>
-                        </div>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
@@ -119,19 +97,16 @@ const SignUp = () => {
                             </label>
                         </div>
 
-                        {signInError}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up" />
+              
+                        <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
-                    <p>Already have an account? <Link className='text-red-700' to="/login">Please login</Link></p>
-                    <div className="divider">OR</div>
-                    <button
-                        onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
-                    >Continue with Google</button>
+                    
                 </div>
             </div>
         </div >
-    );
+
+    </div>
+  );
 };
 
-export default SignUp;
+export default Payment;

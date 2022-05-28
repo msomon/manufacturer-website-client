@@ -18,7 +18,7 @@ useEffect( ()=>{
 
 },[tools])
 
- 
+//  console.log(tools);
   return {tools,setTools};
 };
 

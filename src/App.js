@@ -24,6 +24,7 @@ import DashboardHome from './Pages/Dashboard/DashboardHome';
 import MyPortfolio from './Pages/Home/MyPortfolio';
 import UpdateMyProfile from './Pages/Home/UpdateMyProfile';
 import BusinessSummary from './Pages/Home/BusinessSummary';
+import Payment from './Pages/Dashboard/Payment';
 function App() {
   
   return (
@@ -49,6 +50,9 @@ function App() {
 <Route index element={<DashboardHome/>}></Route>
 <Route path='dashboard/myorders' element={<RequireAuth>
   <Myorders/>
+</RequireAuth>}></Route>
+<Route path='payment/:id' element={<RequireAuth>
+  <Payment/>
 </RequireAuth>}></Route>
 <Route path='dashboard/addreview' element={<RequireAuth>
   <Addreview/>

@@ -15,7 +15,13 @@ const Purchage = () => {
 //   const [quantity,setQuantity]= useState(false)
   
   const {data,isLoading}=useQuery('tool',()=>
-  fetch(`http://localhost:5000/tools/${id}` ).then(res => res.json())
+  fetch(`http://localhost:5000/tools/${id}`,
+  {
+    method: 'GET',
+    headers: {
+        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    }
+}).then(res => res.json())
   )
   
   if(isLoading){
@@ -74,7 +80,7 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
 
 
   return (
-    <div className='w-full  grid lg:grid-cols-2   gap-10 justify-between mt-8'>
+    <div className='w-full  grid lg:grid-cols-2   gap-10 justify-between mt-8 mb-5'>
        <div class="card w-full  bg-base-100 shadow-2xl shadow-2yl ">
   <figure class="px-10 pt-10">
     <img src={img} alt="Shoes" class="rounded-xl" />

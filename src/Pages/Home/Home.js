@@ -24,7 +24,7 @@ const Home = () => {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3 className='text-green-400 text-2xl'> Welcome My Website </h3>
+      <h3 className='text-red-700 text-2xl'> Welcome My Website </h3>
       <p className='text-neutral-900'>Good Quality Producta</p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -36,7 +36,7 @@ const Home = () => {
     />
 
     <Carousel.Caption>
-      <h3 className='text-green-400 text-2xl'>Welcome Newproduct World</h3>
+      <h3 className='text-red-400 text-2xl'>Welcome Newproduct World</h3>
       <p>Quality full Products</p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -48,7 +48,7 @@ const Home = () => {
     />
 
     <Carousel.Caption>
-      <h3 className='text-green-400 ext-2xl'>Your Opinion My Commitment</h3>
+      <h3 className='text-red-400 text-2xl'>Your Opinion My Commitment</h3>
       <p>Highly Good Maintainense </p>
     </Carousel.Caption>
   </Carousel.Item>
