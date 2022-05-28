@@ -51,9 +51,9 @@ function App() {
 <Route path='dashboard/myorders' element={<RequireAuth>
   <Myorders/>
 </RequireAuth>}></Route>
-<Route path='payment/:id' element={<RequireAuth>
+{/* <Route path='payment/:id' element={<RequireAuth>
   <Payment/>
-</RequireAuth>}></Route>
+</RequireAuth>}></Route> */}
 <Route path='dashboard/addreview' element={<RequireAuth>
   <Addreview/>
 </RequireAuth>}></Route>

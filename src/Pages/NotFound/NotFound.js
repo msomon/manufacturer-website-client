@@ -8,8 +8,8 @@ const NotFound = () => {
 <div>
 <h3>Error 404</h3>
 <h3> Oops! The page you're looking for isn't here.</h3>
-<p>You might have the wrong address, or the page may have moved.</p>
-<Link className='backhome' to='/'>Back To Home</Link>
+<p className='mb-5'>You might have the wrong address, or the page may have moved.</p>
+<Link className='backhome mt-3 mb-2' to='/'>Back To Home</Link>
       </div>
       <div>
       <img

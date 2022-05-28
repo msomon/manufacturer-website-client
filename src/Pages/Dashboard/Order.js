@@ -29,7 +29,7 @@ const Order = ({order,setOrders}) => {
 const paid ='true'
   // console.log(order);
   return (
-    <div class="card w-1/6  bg-base-100 shadow-xl ">
+    <div class="card w-full  bg-base-100 shadow-xl ">
   <figure class="px-10 pt-10">
     <img src={img} alt="Shoes" class="rounded-xl" />
   </figure>
