@@ -20,7 +20,7 @@ const Addreview = () => {
     
     // console.log(review);
 
-  const url ='http://localhost:5000/addreview';
+  const url ='https://sleepy-brook-79910.herokuapp.com/addreview';
        
        fetch(url,{
            method:'POST',
@@ -43,29 +43,29 @@ const Addreview = () => {
     <div className=' mx-auto card w-96 bg-base-100 shadow-xl px-6 mt-8 mb-8 pb-10'>
       <h1 className='mt-3 text-2xl mb-4 text-secondary'> 👍 Please Add Review 👍 </h1>
       <form className='flex flex-col gap-2 ' onSubmit={handleSubmit(onSubmit)}>
-      <label class="label">
-    <span class="label-text">User Email</span>
+      <label className="label">
+    <span className="label-text">User Email</span>
   </label>
-      <input  type="text" readOnly value={user.email} placeholder="Type here user name" class="input input-bordered w-full max-w-xs" />
+      <input  type="text" readOnly value={user.email} placeholder="Type here user name" className="input input-bordered w-full max-w-xs" />
     
-      <label class="label">
-    <span class="label-text">Rating</span>
+      <label className="label">
+    <span className="label-text">Rating</span>
   </label>
       <input {...register("rating" ,{
          max:{
           value:'5',
       message:'× You Can Not Give Over 5 Star × '
   }
-      })} type="number" placeholder="Type here rating" class="input input-bordered w-full max-w-xs"  required/>
+      })} type="number" placeholder="Type here rating" className="input input-bordered w-full max-w-xs"  required/>
 
       <label className="label">
       {errors.Rating?.type === 'max' && <span className="label-text-alt text-red-500">{errors.Rating.message}</span>}
        </label>
 
-      <label class="label">
-    <span class="label-text">Comment</span>
+      <label className="label">
+    <span className="label-text">Comment</span>
   </label>
-      <input {...register("comment")} type="text" placeholder="Type here description" class="input input-bordered w-full max-w-xs" required />
+      <input {...register("comment")} type="text" placeholder="Type here description" className="input input-bordered w-full max-w-xs" required />
      
      {
       !admin && 

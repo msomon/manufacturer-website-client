@@ -1,50 +1,18 @@
 [
   {"img":"https://i.ibb.co/bLWh4D0/images.jpg",
     "name":"RAM",
-    "price":"4000 ",
-    "minimumOrder":"10" ,
-    "availableQuantity":"2124" , 
     "description":"Use these Windows 10 commands to quickly find memory module information without taking the computer apart or using third-party apps. "
    
    },
   {"img":"https://i.ibb.co/xFX5yBz/images-2.jpg",
-    "name":"SSD",
-    "price":"4500 ",
-    "minimumOrder":"10" ,
-    "availableQuantity":"2024" , 
+    "name":"SSD", 
     "description":"Another useful bit of info is in the top-right corner, where it shows you the amount of data that has been written to the drive—in this instance, about 62TB. This is important to know since most SSDs. "
    
    },
   {"img":"https://i.ibb.co/G7pJ1x2/images-1.jpg",
     "name":"PROCESSOR",
-    "price":"14000 ",
-    "minimumOrder":"4" ,
-    "availableQuantity":"1024" , 
     "description":"A processor is an integrated electronic circuit that performs the calculations that run a computer. A processor performs arithmetical, logical, input/output (I/O) and other basic instructions that are passed from an operating system (OS). "
    
-   },
-  {"img":"https://i.ibb.co/PZnnNSw/download-1.jpg",
-    "name":"HDD",
-    "price":"3500 ",
-    "minimumOrder":"5" ,
-    "availableQuantity":"1241" , 
-    "description":"The availability of various types of archival storage media such as Betamax and VHS tapes, high-capacity hard disk drives, DVDs, flash drives, high-definition Blu-ray Discs. "
-   
-   },
-  {"img":"https://i.ibb.co/R9p0bDQ/images-3.jpg",
-    "name":"PENDRIVE",
-    "price":"950 ",
-    "minimumOrder":"10" ,
-    "availableQuantity":"1504" , 
-    "description":" USB flash drive (also called a thumb drive) is a data storage device that includes flash memory with an integrated USB interface. It is typically removable, rewritable and much smaller than an optical disc. "
-   
-   },
-  {"img":"https://i.ibb.co/rwK8ypw/download-2.jpg",
-    "name":"COOLER",
-    "price":"3000 ",
-    "minimumOrder":"5" ,
-    "availableQuantity":"1204" , 
-    "description":"A CPU cooler is device designed to draw heat away from the system CPU and other components in the enclosure. Using a CPU cooler to lower CPU temperatures improves efficiency and stability of the system. "
-   
    }
+ 
 ]

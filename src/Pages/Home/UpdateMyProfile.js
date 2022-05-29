@@ -20,7 +20,7 @@ const UpdateMyProfile = () => {
        education: data.education
    }
 //    console.log(profiledata);
-   const url = `http://localhost:5000/user/updatemyprofile/${user.email}`;
+   const url = `https://sleepy-brook-79910.herokuapp.com/user/updatemyprofile/${user.email}`;
    
    fetch(url,{
        method:'PUT',

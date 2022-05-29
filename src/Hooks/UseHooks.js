@@ -5,7 +5,7 @@ const UseHooks = () => {
 
 
 useEffect( ()=>{
-  fetch('http://localhost:5000/tools',
+  fetch('https://sleepy-brook-79910.herokuapp.com/tools',
   {
     method: 'GET',
     headers: {

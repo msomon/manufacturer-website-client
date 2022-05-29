@@ -7,6 +7,8 @@ import img2 from '../../images/carosel4.webp'
 import img3 from '../../images/carosel3.webp'
 import './Home.css'
 import Reviews from './Reviews'
+import UpcomingProducts from './UpcomingProducts';
+import TopCustomer from './TopCustomer';
 
 const Home = () => {
   const {tools,setTools} =UseHooks()
@@ -65,6 +67,14 @@ const Home = () => {
   
  <Reviews></Reviews>
 
+ <div>
+   <UpcomingProducts></UpcomingProducts>
+ </div>
+ <div className='mt-5 mb-5'>
+ <h1 className='text-primary text-3xl text-center mt-2 mb-2'>TOP CUSTOMER LIST</h1>
+<TopCustomer></TopCustomer>
+
+ </div>
  </div>
 
   );

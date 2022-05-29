@@ -25,6 +25,8 @@ import MyPortfolio from './Pages/Home/MyPortfolio';
 import UpdateMyProfile from './Pages/Home/UpdateMyProfile';
 import BusinessSummary from './Pages/Home/BusinessSummary';
 import Payment from './Pages/Dashboard/Payment';
+import Blogs from './Pages/Home/Blogs';
+import UpcomingProducts from './Pages/Home/UpcomingProducts';
 function App() {
   
   return (
@@ -33,6 +35,8 @@ function App() {
 <Routes>
 <Route path='/' element={<Home/>}></Route>
 <Route path='/home' element={<Home/>}></Route>
+<Route path='/blogs' element={<Blogs/>}></Route>
+<Route path='/upcomingproduct' element={<UpcomingProducts/>}></Route>
 <Route path='/myportfolio' element={<MyPortfolio/>}></Route>
 <Route path='/businesssummary' element={<BusinessSummary/>}></Route>
 <Route path='/myProfile' element={<MyProfile/>}></Route>
@@ -51,9 +55,9 @@ function App() {
 <Route path='dashboard/myorders' element={<RequireAuth>
   <Myorders/>
 </RequireAuth>}></Route>
-{/* <Route path='payment/:id' element={<RequireAuth>
+<Route path='payment/:id' element={<RequireAuth>
   <Payment/>
-</RequireAuth>}></Route> */}
+</RequireAuth>}></Route>
 <Route path='dashboard/addreview' element={<RequireAuth>
   <Addreview/>
 </RequireAuth>}></Route>
