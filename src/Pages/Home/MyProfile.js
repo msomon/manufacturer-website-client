@@ -12,7 +12,7 @@ const MyProfile = () => {
   
   useEffect( ()=>{
     // setLoading(true)
-    fetch(`https://sleepy-brook-79910.herokuapp.com/user/myprofile/${users?.email}`, {
+    fetch(`https://sleepy-brook-79910.herokuapp.com/user/myprofile/${users.email}`, {
       method: 'GET',
       headers: {
           'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -7,7 +7,7 @@ const MyPortfolio = () => {
   const [portfolio,setPortfolio] = useState([]);
 
   useEffect( ()=>{
-    fetch(`https://sleepy-brook-79910.herokuapp.com/user/myprofile/${users?.email}`,
+    fetch(`https://sleepy-brook-79910.herokuapp.com/user/myprofile/${users.email}`,
     {
       method: 'GET',
       headers: {
@@ -16,7 +16,7 @@ const MyPortfolio = () => {
   })
     .then(res =>res.json())
     .then(data=>setPortfolio(data))
-  },[portfolio]);
+  },[users]);
      
 // console.log(users);
 
