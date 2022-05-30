@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Order = ({order,setOrders}) => {
-  const {name,user,email,img,quantity,price,totalPrice,description,_id}= order
+  const {name,user,email ,img,quantity,price,totalPrice,description,_id}= order
   // console.log(order);
 
   const cancelOrder = id =>{
@@ -26,7 +26,6 @@ const Order = ({order,setOrders}) => {
   }
 
 
-const paid ='true'
   // console.log(order);
   return (
     <div className="card w-full  bg-base-100 shadow-xl ">
@@ -40,9 +39,11 @@ const paid ='true'
     <h2 className="card-title">Quantity: {quantity}</h2>
     <h2 className="card-title"> Price: {price}</h2>
     <h2 className="card-title">Total Price: {totalPrice}</h2>
-   { !paid && <button className='btn btn-primary' onClick={ ()=>cancelOrder(_id)}>Cancel Order</button>}
-   {(order?.price && paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-primary' >Pay</button></Link>}
-   {(order?.price && !paid) && <span><button className='btn btn-primary' >Paid</button></span>}
+   {!order?.paid && <button className=' btn btn-primary' onClick={ ()=>cancelOrder(_id)}>Cancel Order</button>}
+
+   {(order?.price && !order?.paid) && <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-primary' >Pay</button></Link>}
+   {(order?.price && order?.paid) && <span><button className='btn btn-outline text-bold text-2xl text-green-700' >Paid</button></span>}
+   { order?.paid && <p className='text-green-600'> Yout Transaction Id :{order?.transactionId}</p>}
   </div>
 
 </div>

@@ -48,7 +48,7 @@ const Navbar = () => {
             </div>
                 
             {
-         user &&  <label For="dashboard-sidebar" className="btn btn-secondary drawer-button lg:hidden">Dashboard</label>
+         user &&  <label htmlFor="dashboard-sidebar" className="btn btn-secondary drawer-button lg:hidden">Dashboard</label>
          
             }
               
