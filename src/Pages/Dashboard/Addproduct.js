@@ -4,21 +4,57 @@ import { toast } from 'react-toastify';
 
 const Addproduct = (event) => {
   const { register,reset, handleSubmit } = useForm();
-  const onSubmit = data => {
-    console.log(data)
+   const imageStoreKey ='f856352aa0a1ba19f08a23b95d1772df' 
+
+
+  const onSubmit =async (data) => {
+    // console.log(data)
+
+const image = data.img[0]
+const formData = new FormData()
+formData.append('image', image);
+const imgUrl =`https://api.imgbb.com/1/upload?key=${imageStoreKey}` ;
+
+fetch(imgUrl, {
+  method: 'POST',
+  body:formData
+})
+.then(res=>res.json())
+.then(result=>{
+  if(result.success){
+    const image = result.data.url 
+    const product = {
+      name :data.name ,
+      img: image ,
+      availableQuantity : data.availableQuantity ,
+      minimumOrder : data.minimumOrder ,
+      price : data.price ,
+      description : data.description
+    }
+    // console.log(product);
     const url = 'https://sleepy-brook-79910.herokuapp.com/addproduct'
     fetch(url,{
       method:'POST',
       headers:{
         'content-type':'application/json'
       },
-      body:JSON.stringify(data)
+      body:JSON.stringify(product)
     }) 
     .then(res=>res.json())
-    .then(result=>console.log(result))
-    reset()
-    toast('Add Item Succesfully')
+    .then(insert=>{
+      if(insert.insertedId){
+        reset()
+        toast.success('Add Item Succesfully')
+      }
+      else{
+        toast.error('Failed to add ptoduct')
+      }
+    })
+  }
   
+})
+
+    
   }
 
 
@@ -33,7 +69,7 @@ const Addproduct = (event) => {
       <label className="label">
     <span className="label-text">Product Image Url</span>
   </label>
-      <input {...register("img")} type="text" placeholder="Type here Photo Url" className="input input-bordered w-full max-w-xs" />
+      <input {...register("img")} type="file" placeholder="Type here Photo Url" className="input input-bordered w-full max-w-xs" />
       <label className="label">
     <span className="label-text">Product AvailableQuantity</span>
   </label>

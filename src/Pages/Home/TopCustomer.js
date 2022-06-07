@@ -2,8 +2,8 @@ import React from 'react';
 
 const TopCustomer = () => {
   return (
-    <div className="overflow-x-auto mt-4">
-  <table className="table table-zebra w-full">
+    <div className="overflow-x-auto mt-4 ">
+  <table className="table relative table-zebra w-full">
     {/* <!-- head --> */}
     <thead>
       <tr>
@@ -16,7 +16,7 @@ const TopCustomer = () => {
     <tbody>
       {/* <!-- row 1 --> */}
       <tr>
-        <th>1</th>
+        <th className='xs:hidden'>1</th>
         <td>Cy Ganderton</td>
         <td>GOOLSEN</td>
         <td>20000 USD</td>

@@ -16,12 +16,12 @@ const Home = () => {
 
   // console.log(data);
   return (
-<div>
+<div className=''>
  <div className='carosel'>
 <Carousel>
   <Carousel.Item>
     <img
-      className="d-block w-100"
+      className="d-block w-full"
       src={img1}
       alt="First slide"
     />
@@ -58,7 +58,7 @@ const Home = () => {
 
 </div>
 
-   <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-7 my-16'>
+   <div className='grid sm:mx-5 md:grid-cols-2 lg:grid-cols-3 gap-7 my-16'>
   
       {
         tools?.slice(-6).reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
@@ -70,7 +70,7 @@ const Home = () => {
  <div>
    <UpcomingProducts></UpcomingProducts>
  </div>
- <div className='mt-5 mb-5'>
+ <div className='mt-5 mb-5 xs:w-1/6'>
  <h1 className='text-primary text-3xl text-center mt-2 mb-2'>TOP CUSTOMER LIST</h1>
 <TopCustomer></TopCustomer>
 

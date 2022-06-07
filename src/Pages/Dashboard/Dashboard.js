@@ -13,6 +13,7 @@ const Dashboard = () => {
             <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 <h2 className='text-2xl font-bold text-purple-500'>Welcome to your Dashboard</h2>
+                
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side">
@@ -35,6 +36,7 @@ const Dashboard = () => {
                     <li><NavLink to="dashboard/addproduct">Add Product</NavLink></li>
                     <li><NavLink to="dashboard/manageorders">Manage All Orders</NavLink></li>
                     <li><NavLink to="dashboard/manageproducts">Manage All Products</NavLink></li>
+                   
                     </>
                     
                     }
