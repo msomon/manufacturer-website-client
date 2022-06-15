@@ -21,7 +21,7 @@ const MyPortfolio = () => {
 // console.log(users);
 
   return (
-    <div className='h-full w-3/4 mx-auto  gap-10 justify-between mt-8 mb-3'>
+    <div className='h-full lg:w-3/4 sm:w-[70vh] mx-auto  gap-10 justify-between mt-8 mb-3'>
       
     <div className="card w-full  bg-base-100 shadow-2xl shadow-2yl "><h3 className='text-center mt-3 text-3xl text-green-500 '>❤ My Portfolio  ❤ </h3>
 <div className="card-body items-center text-center">

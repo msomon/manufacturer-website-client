@@ -2,8 +2,9 @@ import React from 'react';
 
 const TopCustomer = () => {
   return (
-    <div className="overflow-x-auto mt-4 ">
-  <table className="table relative table-zebra w-full">
+    <div className=" mt-4 sm:hidden lg:block ">
+      <h1 className='text-primary text-3xl text-center mt-2 mb-2'>TOP CUSTOMER LIST</h1>
+  <table className="table relative table-zebra ">
     {/* <!-- head --> */}
     <thead>
       <tr>

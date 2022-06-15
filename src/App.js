@@ -30,7 +30,7 @@ import UpcomingProducts from './Pages/Home/UpcomingProducts';
 function App() {
   
   return (
-    <div className='lg:mx-20 px-10 mt-5 xs:mx-5 xs:px-3'>
+    <div className='lg:mx-20 lg:px-10 mt-5  mb-8'>
       <Navbar></Navbar>
 <Routes>
 <Route path='/' element={<Home/>}></Route>
@@ -84,8 +84,11 @@ function App() {
 
   
 </Routes>
+<div className=''>
+ <Footer></Footer>
 
-      <Footer></Footer>
+</div>
+
      <ToastContainer/>
     </div>
   );

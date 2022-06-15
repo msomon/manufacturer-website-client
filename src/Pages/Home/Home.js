@@ -8,7 +8,7 @@ import img3 from '../../images/carosel3.webp'
 import './Home.css'
 import Reviews from './Reviews'
 import UpcomingProducts from './UpcomingProducts';
-import TopCustomer from './TopCustomer';
+// import TopCustomer from './TopCustomer';
 
 const Home = () => {
   const {tools,setTools} =UseHooks()
@@ -16,8 +16,8 @@ const Home = () => {
 
   // console.log(data);
   return (
-<div className=''>
- <div className='carosel'>
+<div className='sm:mx-5'>
+ <div className='carosel ms-0'>
 <Carousel>
   <Carousel.Item>
     <img
@@ -58,23 +58,27 @@ const Home = () => {
 
 </div>
 
-   <div className='grid sm:mx-5 md:grid-cols-2 lg:grid-cols-3 gap-7 my-16'>
+   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-7 my-16'>
   
       {
         tools?.slice(-6).reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
       }
   </div> 
-  
+  <div className=''>
+
  <Reviews></Reviews>
 
- <div>
+  </div>
+
+
+ <div className=''>
    <UpcomingProducts></UpcomingProducts>
  </div>
- <div className='mt-5 mb-5 xs:w-1/6'>
- <h1 className='text-primary text-3xl text-center mt-2 mb-2'>TOP CUSTOMER LIST</h1>
+ {/* <div className='mt-5 mb-5 '>
+ 
 <TopCustomer></TopCustomer>
 
- </div>
+ </div> */}
  </div>
 
   );

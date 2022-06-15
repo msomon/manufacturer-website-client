@@ -20,7 +20,7 @@ const Navbar = () => {
         <li><NavLink to="/myportfolio">My Portfolio</NavLink></li>
         <li><NavLink to="/myprofile">My Profile</NavLink></li>
         {
-            user &&  <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+            user &&  <li className='sm:hidden lg:block'><NavLink  to="/dashboard">Dashboard</NavLink></li>
         }
         <li><NavLink to="/businesssummary">Bussiness Summary</NavLink></li>
         <li>{user ? <button className="btn btn-ghost text-xl" onClick={logout} >Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
@@ -48,7 +48,7 @@ const Navbar = () => {
             </div>
                 
             {
-         user &&  <label htmlFor="dashboard-sidebar" className="btn btn-secondary drawer-button lg:hidden">Dashboard</label>
+         user &&   <label htmlFor="dashboard-sidebar" className="btn btn-secondary drawer-button lg:hidden">Dashboard</label>
          
             }
               

@@ -2,11 +2,11 @@ import React from 'react';
 
 const BusinessSummary = () => {
   return (
-    <div className='card w-full bg-base-100 shadow-xl h-80vh  mt-20 mb-5'>
+    <div className='card lg:w-full sm:w-[70vh] bg-base-100 shadow-xl h-80vh  mt-20 mb-5'>
       <h1 className='text-center text-4xl mt-8 text-green-400'>YOUR TRUSTED SERVICE PROVIDER</h1>
       <h1 className='text-center text-primary text-xl mt-8 mb-4'>USERS COMMITMENT OUR INSPIRATION</h1>
-      <div className="stats shadow">
-  <div className="stat">
+      <div className="stats shadow ">
+  <div className="stat  ">
     <div className="stat-figure text-primary">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
     </div>
