@@ -1,11 +1,10 @@
 .carosel{
    max-height: 500px;
    max-width: 1450px;
-   min-width: 340px;
    padding: 20px;
    z-index: 2;
    margin:10px 10px 5px 5px;
-   border-radius: 30px;
+   border-radius: 20px;
 }
 .carosel img{
   
@@ -13,27 +12,21 @@
   border-radius: 20px;
 }
 
-/* @media(min-width:480px)and (max-width:568px) {
+@media(min-width:350px)and (max-width:680px) {
   .carosel{
-    margin:5px ;
-    
-    padding: 5px;
-    margin-left: 0px;
-   
+    min-width: 345px;
+    /* max-width: 650px; */
+    max-height:400px ;
+   margin-left: 0px;
+   margin-right:0px;
+   margin-bottom: 10px;
+  padding:0px;
+ 
   }
-  .items{
-    width:55vh;
-     
-  }
-
-  .reviews{
-    width:55vh;
-  }
-  .upcoming-products{
-    width:55vh;
-  }
-  .footer{
-    width:60vh;
+  .carosel img{
+    min-width: 345px;
+    /* max-width: 650px; */
+    max-height: 350px;
   }
   
-} */
+}

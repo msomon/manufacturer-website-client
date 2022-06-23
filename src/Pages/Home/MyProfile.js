@@ -33,15 +33,15 @@ const MyProfile = () => {
 // console.log(users);
 
   return (
-    <div className='h-full lg:w-3/4 mx-auto sm:w-[70vh]  gap-10 justify-between mt-8 mb-5'>
+    <div className='h-100 w-80 sm:mx-4  lg:w-3/4 justify-between mt-8 mb-3'>
       
     <div className="card w-full  bg-base-100 shadow-2xl shadow-2yl "><h3 className='text-center mt-3 text-3xl text-green-500 '>🌹 My Profile 🌹</h3>
 <div className="card-body items-center text-center">
-<h2 className="card-title">Name:{profiles.user}</h2>
- <h2 className="card-title">Email: {profiles.email}</h2> 
- <h2 className="card-title">Address: {profiles.address}</h2>
- <h2 className="card-title">Number: {profiles.number}</h2>
- <h2 className="card-title">Education: {profiles.education}</h2>
+<h2 className="card-title">Name:{profiles?.user}</h2>
+ <h2 className="card-title">Email: {profiles?.email}</h2> 
+ <h2 className="card-title">Address: {profiles?.address}</h2>
+ <h2 className="card-title">Number: {profiles?.number}</h2>
+ <h2 className="card-title">Education: {profiles?.education}</h2>
  <button className='btn btn-primary'><Link to='/updatemyprofile'>ADD OR Update Your Profile</Link></button>
 </div>
 

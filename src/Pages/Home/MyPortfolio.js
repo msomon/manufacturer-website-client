@@ -21,15 +21,15 @@ const MyPortfolio = () => {
 // console.log(users);
 
   return (
-    <div className='h-full lg:w-3/4 sm:w-[70vh] mx-auto  gap-10 justify-between mt-8 mb-3'>
+    <div className='h-100 w-80 sm:mx-4  lg:w-3/4 justify-between mt-8 mb-3'>
       
     <div className="card w-full  bg-base-100 shadow-2xl shadow-2yl "><h3 className='text-center mt-3 text-3xl text-green-500 '>❤ My Portfolio  ❤ </h3>
 <div className="card-body items-center text-center">
- <h2 className="card-title">Name:{portfolio.user}</h2>
- <h2 className="card-title">Email: {portfolio.email}</h2> 
- <h2 className="card-title">Address: {portfolio.address}</h2>
- <h2 className="card-title">Number: {portfolio.number}</h2>
- <h2 className="card-title">Education: {portfolio.education}</h2>
+ <h2 className="card-title">Name:{portfolio?.user}</h2>
+ <h2 className="card-title">Email: {portfolio?.email}</h2> 
+ <h2 className="card-title">Address: {portfolio?.address}</h2>
+ <h2 className="card-title">Number: {portfolio?.number}</h2>
+ <h2 className="card-title">Education: {portfolio?.education}</h2>
 <h2 className="card-title">live website projects links</h2>
 <h1>https://electronics-manufacturer.web.app/</h1>
 <h1>https://electronics-warehouse-59bbd.web.app/</h1>

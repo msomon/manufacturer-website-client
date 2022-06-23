@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import useToken from '../Hooks/useToken';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register,watch, formState: { errors }, handleSubmit } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     const [token] = useToken(user || gUser);
 
@@ -38,6 +40,15 @@ const Login = () => {
         signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
     }
 
+    const resetPassword =async()=>{
+        const email = watch('email');
+        // console.log(email);
+        await sendPasswordResetEmail(email);
+        toast('Reset email');
+      }
+
+
+
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
     }
@@ -47,11 +58,11 @@ const Login = () => {
     return (
         <div className='flex h-screen justify-center items-center lg:mt-4  mb-5 '>
             <div className="card w-96 bg-base-100 shadow-xl">
-                <div className="card-body">
+                <div className="card-body ">
                     <h2 className="text-center text-2xl font-bold">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control  w-full max-w-xs mb-3 ">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
@@ -75,7 +86,7 @@ const Login = () => {
                                 {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                             </label>
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full max-w-xs mb-3">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
@@ -103,6 +114,7 @@ const Login = () => {
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
+                    <p className='mt-2'>Forget password ? <span className='text-primary cursor-pointer' onClick={resetPassword}>Reset password </span></p>
                     <p>New User ?? <Link className='text-primary' to="/signup">Create New Account</Link></p>
                     <div className="divider">OR</div>
                     <button

@@ -8,6 +8,7 @@ import img3 from '../../images/carosel3.webp'
 import './Home.css'
 import Reviews from './Reviews'
 import UpcomingProducts from './UpcomingProducts';
+import Contact from './Contact';
 // import TopCustomer from './TopCustomer';
 
 const Home = () => {
@@ -16,8 +17,8 @@ const Home = () => {
 
   // console.log(data);
   return (
-<div className='sm:mx-5'>
- <div className='carosel ms-0'>
+<div className='sm:mb-3'>
+ <div className='carosel sm:mx-0 '>
 <Carousel>
   <Carousel.Item>
     <img
@@ -58,27 +59,25 @@ const Home = () => {
 
 </div>
 
-   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-7 my-16'>
+   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-7 my-16 sm:mx-3'>
   
       {
         tools?.slice(-6).reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
       }
   </div> 
-  <div className=''>
+  <div className='sm:mx-3'>
 
  <Reviews></Reviews>
 
   </div>
 
 
- <div className=''>
+ <div className='sm:mx-3'>
    <UpcomingProducts></UpcomingProducts>
  </div>
- {/* <div className='mt-5 mb-5 '>
- 
-<TopCustomer></TopCustomer>
-
- </div> */}
+ <div className='bg-base-200 '>
+  <Contact></Contact>
+ </div>
  </div>
 
   );

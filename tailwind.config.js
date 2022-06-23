@@ -7,6 +7,7 @@ module.exports = {
       md: '768px',
       lg: '976px',
       xl: '1440px',
+      
     },
   },
 
@@ -15,11 +16,21 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#0FCFEC",
-          secondary: "#19D3AE",
-          accent: "#3A4256",
-          neutral: "#3d4451",
-          "base-100": "#ffffff",
+          "primary": "#0FCFEC",
+          "secondary": "#F000B8",
+        
+          "accent": "#DBFEFC",
+                  
+          "neutral": "#3D4451",
+                  
+          "base-100": "#FFFFFF",
+                  
+          "info": "#F9EEFE",
+          "success": "#570DF8",     
+          "warning": "#FFF2F5",
+                  
+          "error": "#F87272",
+          
         }
       },
       
