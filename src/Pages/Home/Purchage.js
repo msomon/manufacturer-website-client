@@ -15,7 +15,7 @@ const Purchage = () => {
 //   const [quantity,setQuantity]= useState(false)
   
   const {data,isLoading}=useQuery('tool',()=>
-  fetch(`https://sleepy-brook-79910.herokuapp.com/tools/${id}`,
+  fetch(`https://electronics-manufecture-website.onrender.com/tools/${id}`,
   {
     method: 'GET',
     headers: {
@@ -55,7 +55,7 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
            totalPrice:totalPrice ,
            name : name 
        }
-       const url = 'https://sleepy-brook-79910.herokuapp.com/myorders';
+       const url = 'https://electronics-manufecture-website.onrender.com/myorders';
        
        fetch(url,{
            method:'POST',

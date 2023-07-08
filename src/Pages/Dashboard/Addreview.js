@@ -20,7 +20,7 @@ const Addreview = () => {
     
     // console.log(review);
 
-  const url ='https://sleepy-brook-79910.herokuapp.com/addreview';
+  const url ='https://electronics-manufecture-website.onrender.com/addreview';
        
        fetch(url,{
            method:'POST',
@@ -40,7 +40,7 @@ const Addreview = () => {
 
 
   return (
-    <div className=' mx-auto card w-96 bg-base-100 shadow-xl px-6 mt-8 mb-8 pb-10'>
+    <div className=' mx-auto card w-70 lg:w-2/4  bg-base-100 shadow-xl px-6 mt-8 mb-8 pb-10'>
       <h1 className='mt-3 text-2xl mb-4 text-secondary'> 👍 Please Add Review 👍 </h1>
       <form className='flex flex-col gap-2 ' onSubmit={handleSubmit(onSubmit)}>
       <label className="label">

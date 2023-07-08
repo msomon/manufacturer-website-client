@@ -10,7 +10,7 @@ const Myorders = () => {
   useEffect(() => {
 
     if (user) {
-        fetch(`https://sleepy-brook-79910.herokuapp.com/myorders?email=${user.email}`, {
+        fetch(`https://electronics-manufecture-website.onrender.com/myorders?email=${user.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

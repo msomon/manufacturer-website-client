@@ -30,7 +30,7 @@ import UpcomingProducts from './Pages/Home/UpcomingProducts';
 function App() {
   
   return (
-    <div className='lg:mx-20 lg:px-10 mt-5  mb-8'>
+    <div className='mx-2  lg:px-2  mb-8'>
       <Navbar></Navbar>
 <Routes>
 <Route path='/' element={<Home/>}></Route>

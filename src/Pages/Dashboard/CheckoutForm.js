@@ -15,7 +15,7 @@ const [clintSecret ,setClintSecret] = useState('');
 const {totalPrice,_id ,user,email} = data ;
 
 useEffect( ()=>{
-  const url = 'https://sleepy-brook-79910.herokuapp.com/create-payment-intent'
+  const url = 'https://electronics-manufecture-website.onrender.com/create-payment-intent'
 
   fetch(url,{
     method:'POST',
@@ -87,7 +87,7 @@ if(result?.clientSecret){
         transactionId : paymentIntent.id
       }
 
-      fetch(`https://sleepy-brook-79910.herokuapp.com/payment/${_id}`,{
+      fetch(`https://electronics-manufecture-website.onrender.com/payment/${_id}`,{
         method:'PATCH',
         headers:{
           'content-type':'application/json'

@@ -13,7 +13,7 @@ const useToken = user =>{
            };
 
         if(email){
-            fetch(`https://sleepy-brook-79910.herokuapp.com/users/${email}`, {
+            fetch(`https://electronics-manufecture-website.onrender.com/users/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json'

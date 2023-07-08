@@ -3,11 +3,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const MyPortfolio = () => { 
-  const [users] = useAuthState(auth)
+  const [user] = useAuthState(auth)
   const [portfolio,setPortfolio] = useState([]);
 
   useEffect( ()=>{
-    fetch(`https://sleepy-brook-79910.herokuapp.com/user/myprofile/${users.email}`,
+    fetch(`https://electronics-manufecture-website.onrender.com/user/myprofile/${user?.email}`,
     {
       method: 'GET',
       headers: {
@@ -16,17 +16,17 @@ const MyPortfolio = () => {
   })
     .then(res =>res.json())
     .then(data=>setPortfolio(data))
-  },[users]);
+  },[user]);
      
 // console.log(users);
 
   return (
-    <div className='h-100 w-80 sm:mx-4  lg:w-3/4 justify-between mt-8 mb-3'>
+    <div className='w-70 mx-auto  lg:w-2/4  mt-8 mb-3'>
       
     <div className="card w-full  bg-base-100 shadow-2xl shadow-2yl "><h3 className='text-center mt-3 text-3xl text-green-500 '>❤ My Portfolio  ❤ </h3>
 <div className="card-body items-center text-center">
  <h2 className="card-title">Name:{portfolio?.user}</h2>
- <h2 className="card-title">Email: {portfolio?.email}</h2> 
+ <h2 className="card-title">Email: {user?.email}</h2> 
  <h2 className="card-title">Address: {portfolio?.address}</h2>
  <h2 className="card-title">Number: {portfolio?.number}</h2>
  <h2 className="card-title">Education: {portfolio?.education}</h2>

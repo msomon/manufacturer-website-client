@@ -10,7 +10,7 @@ const Order = ({order,setOrders}) => {
     const proceed = window.confirm('are you sure')
     if(proceed){
       // console.log('user id',id);
-    const url = `https://sleepy-brook-79910.herokuapp.com/cancelorder/${id}` ;
+    const url = `https://electronics-manufecture-website.onrender.com/cancelorder/${id}` ;
 
     fetch(url,{
     method:'DELETE'

@@ -23,8 +23,8 @@ const Navbar = () => {
             user &&  <li className='sm:hidden lg:block'><NavLink  to="/dashboard">Dashboard</NavLink></li>
         }
         <li><NavLink to="/businesssummary">Bussiness Summary</NavLink></li>
-        <li>{user ? <button className="btn btn-ghost text-xl" onClick={logout} >Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
-        <p className='rounded-lg mx-6 mt-3 lg:text-lg sm:text-xs'>{user?.email}</p>
+        <li>{user ? <button className="btn font-bold btn-ghost mt-1 text-[16px]" onClick={logout} >Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
+        {/* <p className='rounded-lg mx-2 mt-3 lg:text-base sm:text-xs'>{user?.email}</p> */}
     </>
     return (
         <div className="navbar bg-base-100 ">
@@ -40,20 +40,14 @@ const Navbar = () => {
             
             </div>
                 
-            <div className="navbar-center mx-auto hidden lg:flex text-xl mb-4">
+            <div className="navbar-center mx-auto hidden lg:flex text-xl mb-1">
                 <ul className="menu menu-horizontal p-0 ">
                     {menuItems}
                 </ul>
 
             </div>
 
-           {
-            user&&  <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost lg:hidden">Dashboard
-           </label>
-           }     
-         
-            
-              
+           
         </div>
     );
 };

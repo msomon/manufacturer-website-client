@@ -32,7 +32,7 @@ fetch(imgUrl, {
       description : data.description
     }
     // console.log(product);
-    const url = 'https://sleepy-brook-79910.herokuapp.com/addproduct'
+    const url = 'https://electronics-manufecture-website.onrender.com/addproduct'
     fetch(url,{
       method:'POST',
       headers:{

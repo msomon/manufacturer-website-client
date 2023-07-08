@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L44ajDHVcHNosnNxn4BUHtQTdQdnfNCjZfNh
 const Payment = () => {
   const {id} =useParams()
 
-  const url =`https://sleepy-brook-79910.herokuapp.com/myorder/payment/${id}`
+  const url =`https://electronics-manufecture-website.onrender.com/myorder/payment/${id}`
 
   const {data,isLoading}=useQuery(['order',id],()=>fetch(url).then(res=>res.json()))
   

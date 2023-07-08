@@ -56,10 +56,10 @@ const Login = () => {
     // console.log(token);
 
     return (
-        <div className='flex h-screen justify-center items-center lg:mt-4  mb-5 '>
+        <div className='flex justify-center items-center lg:mt-0 lg:mb-12 mb-5 '>
             <div className="card w-96 bg-base-100 shadow-xl">
-                <div className="card-body ">
-                    <h2 className="text-center text-2xl font-bold">Login</h2>
+                <div className="card-body  pt-1 ">
+                    <h2 className="text-center text-2xl font-bold mt-0 pt-0">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control  w-full max-w-xs mb-3 ">
@@ -116,10 +116,10 @@ const Login = () => {
                     </form>
                     <p className='mt-2'>Forget password ? <span className='text-primary cursor-pointer' onClick={resetPassword}>Reset password </span></p>
                     <p>New User ?? <Link className='text-primary' to="/signup">Create New Account</Link></p>
-                    <div className="divider">OR</div>
+                    <div className="divider mt-0">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
+                        className="btn btn-outline "
                     >Continue with Google</button>
                 </div>
             </div>

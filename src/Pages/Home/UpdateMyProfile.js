@@ -20,7 +20,7 @@ const UpdateMyProfile = () => {
        education: data.education
    }
 //    console.log(profiledata);
-   const url = `https://sleepy-brook-79910.herokuapp.com/user/updatemyprofile/${user.email}`;
+   const url = `https://electronics-manufecture-website.onrender.com/user/updatemyprofile/${user.email}`;
    
    fetch(url,{
        method:'PUT',
@@ -40,13 +40,13 @@ const UpdateMyProfile = () => {
 
 
   return (
-    <div className='flex h-screen  items-center justify-center mt-28'>
-    <div className="card w-96 justify-center bg-base-100 shadow-2xl  mt-10 mx-auto ">
-        <div className="card-body ">
-            <h2 className="text-center text-green-400 text-2xl font-bold mt-4">✔ Please Submit Your Information ✔</h2>
+    <div className='mx-auto  mb-6 mt-0'>
+    <div className="card w-80 lg:w-2/4 justify-center bg-base-100 shadow-2xl mx-auto">
+        <div className="card-body mx-auto pt-2 ">
+            <h2 className="text-center text-green-400 text-xl font-bold mt-0 mb-1">✔ Please Submit Your Information ✔</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
-                <div className="form-control w-full max-w-xs">
+                <div className="form-control  max-w-xs">
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
@@ -131,7 +131,7 @@ const UpdateMyProfile = () => {
                   </label>
             
                 </div>
-                <input  className='btn w-full max-w-xs text-white' type="submit" value="Submit" /> 
+                <input  className='btn w-full max-w-xs text-white mt-2' type="submit" value="Submit" /> 
         
             </form>
         </div>

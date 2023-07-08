@@ -58,11 +58,15 @@ const Home = () => {
 </Carousel>
 
 </div>
+<div>
 
-   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-7 my-16 sm:mx-3'>
+  <h3 className='text-center text-green-700 text-4xl font-bold mt-5'>Our Products </h3>
+</div>
+
+   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-5 my-16 sm:mx-3'>
   
       {
-        tools?.slice(-6).reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
+        tools?.reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
       }
   </div> 
   <div className='sm:mx-3'>

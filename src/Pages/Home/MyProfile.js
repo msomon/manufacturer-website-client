@@ -6,13 +6,13 @@ import Loading from '../../Shared/Loading'
 
 
 const MyProfile = () => {
-  const [users] = useAuthState(auth)
+  const [user] = useAuthState(auth)
   const [profiles,setProfiles] = useState([]);
   const [loading,setLoading] = useState(false);
   
   useEffect( ()=>{
     // setLoading(true)
-    fetch(`https://sleepy-brook-79910.herokuapp.com/user/myprofile/${users.email}`, {
+    fetch(`https://electronics-manufecture-website.onrender.com/user/myprofile/${user?.email}`, {
       method: 'GET',
       headers: {
           'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,7 +23,7 @@ const MyProfile = () => {
       setLoading(false)
       setProfiles(data)
     })
-  },[profiles]);
+  },[user]);
 
   if(loading){
     return <Loading> </Loading>
@@ -33,12 +33,12 @@ const MyProfile = () => {
 // console.log(users);
 
   return (
-    <div className='h-100 w-80 sm:mx-4  lg:w-3/4 justify-between mt-8 mb-3'>
+    <div className=' w-70 sm:mx-4  lg:w-2/4 justify-between mt-8 mx-auto mb-3'>
       
     <div className="card w-full  bg-base-100 shadow-2xl shadow-2yl "><h3 className='text-center mt-3 text-3xl text-green-500 '>🌹 My Profile 🌹</h3>
 <div className="card-body items-center text-center">
 <h2 className="card-title">Name:{profiles?.user}</h2>
- <h2 className="card-title">Email: {profiles?.email}</h2> 
+ <h2 className="card-title">Email: {user?.email}</h2> 
  <h2 className="card-title">Address: {profiles?.address}</h2>
  <h2 className="card-title">Number: {profiles?.number}</h2>
  <h2 className="card-title">Education: {profiles?.education}</h2>

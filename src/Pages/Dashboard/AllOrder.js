@@ -10,7 +10,7 @@ const allOrder = ({order,setOrders}) => {
     const proceed = window.confirm('are you sure')
     if(proceed){
       // console.log('user id',id);
-    const url = `https://sleepy-brook-79910.herokuapp.com/cancelallorder/${id}` ;
+    const url = `https://electronics-manufecture-website.onrender.com/cancelallorder/${id}` ;
 
     fetch(url,{
     method:'DELETE'
@@ -28,13 +28,13 @@ const allOrder = ({order,setOrders}) => {
 
 
   return (
-    <div className="card w-full  bg-base-100 shadow-xl ">
+    <div className="card w-full mx-10 bg-base-100 shadow-xl ml-5">
   <figure className="px-10 pt-10">
     <img src={img} alt="Shoes" className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Name: {user}</h2>
-    <h2 className="card-title">Email: {email}</h2>
+    <h2 className="card-title text-lg">Email: {email}</h2>
     <h2 className="card-title">Product Name: {name}</h2>
     <h2 className="card-title">Quantity: {quantity}</h2>
     <h2 className="card-title"> Price: {price}</h2>

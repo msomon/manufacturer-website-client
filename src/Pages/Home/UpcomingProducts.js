@@ -14,9 +14,9 @@ const UpcomingProducts = () => {
   return (
     <div>
       <h1 className='text-center text-3xl text-primary mt-3 mb-3'>OUR UPCOMING PRODUCTS </h1>
-      <div className='grid lg:grid-cols-3  gap-5 mb-5'>
+      <div className='grid lg:grid-cols-3 gap-5 mb-5'>
       {
-        data?.map((product,index)=><UpcomingProduct key={index} product={product} ></UpcomingProduct> )
+        data?.reverse().map((product,index)=><UpcomingProduct key={index} product={product} ></UpcomingProduct> )
       }
     </div>
     </div>

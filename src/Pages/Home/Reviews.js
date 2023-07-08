@@ -5,7 +5,7 @@ import Review from './Review';
 
 const Reviews = () => {
 
-  const {data : reviews,isLoading} = useQuery('',()=>fetch('https://sleepy-brook-79910.herokuapp.com/reviews', {
+  const {data : reviews,isLoading} = useQuery('',()=>fetch('https://electronics-manufecture-website.onrender.com/reviews', {
     method: 'GET',
     headers: {
         'authorization': `Bearer ${localStorage.getItem('accessToken')}`

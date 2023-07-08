@@ -8,7 +8,7 @@ const Product = ({product ,setTools}) => {
     const proceed = window.confirm('are you sure')
     if(proceed){
       // console.log('user id',id);
-    const url = `https://sleepy-brook-79910.herokuapp.com/deleteallproduct/${id}` ;
+    const url = `https://electronics-manufecture-website.onrender.com/deleteallproduct/${id}` ;
 
     fetch(url,{
     method:'DELETE'
@@ -27,15 +27,15 @@ const Product = ({product ,setTools}) => {
 
   return (
     <div className="card w-full bg-base-100 shadow-xl ">
-  <figure className="px-10 pt-10">
-    <img src={img} alt="Shoes" className="rounded-xl" />
+  <figure className="px-5 pt-2">
+    <img src={img} alt="Shoes" className="rounded-xl h-[150px]" />
   </figure>
-  <div className="card-body items-center text-center">
+  <div className="card-body items-center text-center mt-0 pt-0">
     <h2 className="card-title">Name: {name}</h2>
     <h2 className="card-title">Available Quantity: {availableQuantity}</h2>
     <h2 className="card-title">Minimum Order: {minimumOrder}</h2>
     <h2 className="card-title">Price: {price}</h2>
-    <p>Description: {description}</p>
+    <p>Description: {description.slice(0,50)}</p>
     <div className="card-actions">
       <button className='btn btn-secondory' onClick={()=>deleteallproduct(_id)} >Delete Product</button>
     </div>

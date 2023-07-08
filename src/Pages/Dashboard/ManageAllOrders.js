@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import useAdmin from '../../Hooks/useAdmin';
 import AllOrder from './AllOrder'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const ManageAllOrders = () => {
+  const [user] =useAuthState(auth)
   const {admin} =useAdmin()
   const [orders,setOrders] =useState([])
   useEffect(() => {
    
-        fetch('https://sleepy-brook-79910.herokuapp.com/allorders', {
+        fetch(`https://electronics-manufecture-website.onrender.com/allorders?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -24,7 +27,7 @@ const ManageAllOrders = () => {
 
 
   return (
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 ml-5 mt-7 gap-4 mb-5'>
+    <div className='grid lg:grid-cols-2 md:grid-cols-2 mt-7 gap-4 mb-5'>
       {
         orders?.map(order=><AllOrder key={order._id} setOrders={setOrders} order={order}></AllOrder>)
       }

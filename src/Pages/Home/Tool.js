@@ -3,27 +3,27 @@ import { useNavigate } from 'react-router-dom';
 
 const Tool = ({tool}) => {
   const {name,img,availableQuantity,minimumOrder,price,description,_id}= tool
+  // console.log(tool);
   const navigate = useNavigate()
 
   const purchagePage=(id)=>{
-//  console.log(id);
     navigate(`/purchage/${id}`)
     // navigate(`/purchage/${id}`)
 
   }
   return (
-    <div className="card w-full  bg-base-100 shadow-xl ">
+    <div className="card w-72 bg-base-100 shadow-xl ">
   <figure className="px-10 pt-10">
-    <img src={img} alt="Shoes" className="rounded-xl" />
+    <img src={img} alt="Shoes"  className="rounded-xl lg:h-[200px]" />
   </figure>
   <div className="card-body items-center ">
     <h2 className="card-title">Name: {name}</h2>
     <h2 className="card-title">Available Quantity: {availableQuantity}</h2>
     <h2 className="card-title">Minimum Order: {minimumOrder}</h2>
     <h2 className="card-title">Price: {price}</h2>
-    <p className='flex-none'>Description: {description}</p>
+    <p className='flex-none'>Description: {description.slice(0,50)}</p>
     <div className="card-actions">
-      <button onClick={()=> purchagePage(_id)} className="btn btn-primary">Buy Now</button>
+      <button onClick={()=> purchagePage(_id)} className="btn btn-primary mt-3">Buy Now</button>
     </div>
   </div>
 </div>
