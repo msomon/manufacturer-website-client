@@ -84,7 +84,7 @@ function App() {
 
   
 </Routes>
-<div className=''>
+<div>
  <Footer></Footer>
 
 </div>

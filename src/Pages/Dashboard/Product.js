@@ -26,7 +26,7 @@ const Product = ({product ,setTools}) => {
 
 
   return (
-    <div className="card w-full bg-base-100 shadow-xl ">
+    <div className="card lg:w-[500px] sm:w-[400px] bg-base-100 shadow-xl ">
   <figure className="px-5 pt-2">
     <img src={img} alt="Shoes" className="rounded-xl h-[150px]" />
   </figure>

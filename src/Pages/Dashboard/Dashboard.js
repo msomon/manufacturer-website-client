@@ -15,7 +15,7 @@ const Dashboard = () => {
            </label> */}
             <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
-                <h2 className='text-sm ml-4 font-bold text-purple-500'>Welcome <span className='text-primary'>{user?.displayName}</span> to your Dashboard</h2>
+                <h2 className='lg:text-2xl sm:text-sm ml-4 font-bold text-purple-500'>Welcome <span className='text-primary'>{user?.displayName}</span> to your Dashboard</h2>
 
                 {
             user&&  <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost bg-blue-500 w-28 ml-44 lg:hidden flex justify-end">Dashboard

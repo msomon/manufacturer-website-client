@@ -3,8 +3,10 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-success text-white">
-  <div>
+      <div className=''>
+
+  <footer className="footer lg:w-full sm:w-[400px] sm:pl-32 p-10 bg-success text-white z-10">
+  <div className=' '>
     <span className="footer-title">Services</span> 
     <a className="link link-hover">Branding</a> 
     <a className="link link-hover">Design</a> 
@@ -27,6 +29,7 @@ const Footer = () => {
     </div>
   </div>
 </footer>
+      </div>
     );
 };
 

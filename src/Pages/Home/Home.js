@@ -18,41 +18,41 @@ const Home = () => {
   // console.log(data);
   return (
 <div className='sm:mb-3'>
- <div className='carosel sm:mx-0 '>
+ <div className='carosel lg:w-[1500px] sm:w-[400px] lg:h-[450px]  sm:h-[200px] mx-auto '>
 <Carousel>
   <Carousel.Item>
     <img
-      className="d-block w-full"
+      className="d-block lg:w-[1500px] sm:w-[400px] lg:h-[450px]  sm:h-[200px]"
       src={img1}
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3 className='text-red-700 text-2xl'> Welcome My Website </h3>
-      <p className='text-neutral-900'>Good Quality Producta</p>
+      <h3 className='text-orange-500 text-bold lg:text-4xl'> Welcome My Website </h3>
+      <p className='text-primary lg:text-2xl'>Good Quality Product</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
+      className="d-block lg:w-[1500px] sm:w-[400px] lg:h-[450px]  sm:h-[200px]"
       src={img2}
       alt="Second slide"
     />
 
     <Carousel.Caption>
-      <h3 className='text-red-400 text-2xl'>Welcome Newproduct World</h3>
-      <p>Quality full Products</p>
+      <h3 className='text-yellow-500 lg:text-4xl'>New Product Collection </h3>
+      <p className='text-orange-600 lg:text-2xl'>Quality full Products</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
+      className="lg:w-[1500px] sm:w-[400px] lg:h-[450px]  sm:h-[200px]"
       src={img3}
       alt="Third slide"
     />
 
     <Carousel.Caption>
-      <h3 className='text-red-400 text-2xl'>Your Opinion My Commitment</h3>
-      <p>Highly Good Maintainense </p>
+      <h3 className='text-fuchsia-600 lg:text-4xl'>Your Opinion My Commitment</h3>
+      <p className='text-red-400 lg:text-2xl'>Highly Good Maintainense </p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
@@ -63,7 +63,7 @@ const Home = () => {
   <h3 className='text-center text-green-700 text-4xl font-bold mt-5'>Our Products </h3>
 </div>
 
-   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-5 my-16 sm:mx-3'>
+   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-5 lg:my-16 sm:my-10 sm:mx-3'>
   
       {
         tools?.reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
@@ -79,7 +79,7 @@ const Home = () => {
  <div className='sm:mx-3'>
    <UpcomingProducts></UpcomingProducts>
  </div>
- <div className='bg-base-200 '>
+ <div className='bg-base-300 lg:w-full grid justify-items-center sm:w-[400px]'>
   <Contact></Contact>
  </div>
  </div>

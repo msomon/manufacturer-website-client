@@ -28,9 +28,9 @@ const allOrder = ({order,setOrders}) => {
 
 
   return (
-    <div className="card w-full mx-10 bg-base-100 shadow-xl ml-5">
-  <figure className="px-10 pt-10">
-    <img src={img} alt="Shoes" className="rounded-xl" />
+    <div className="card lg:w-[500px] sm:w-[400px] sm:mx-1 lg:mx-10 bg-base-100 shadow-xl lg:ml-10 ">
+  <figure className="px-10 pt-5">
+    <img src={img} alt="Shoes" className="rounded-xl h-[170px]" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Name: {user}</h2>

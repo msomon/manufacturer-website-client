@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blogs = () => {
   return (
-    <div>
+    <div className='lg:h-4/5 sm:my-10 lg:mx-20 lg:py-10'>
       Ans1 = ptimizing application performance is key for developers who are mindful of keeping a user’s experience positive to keep them on an app and engaged.Keeping component state local where necessary
       Memoizing React components to prevent unnecessary re-renders
       Code-splitting in React using dynamic import()
