@@ -34,19 +34,19 @@ const Dashboard = () => {
                     
                     {
                      (user && !admin) && <>
-                    <li><NavLink to='dashboard/myorders' >My Orders</NavLink></li>
-                    <li><NavLink to="dashboard/addreview">Add Review</NavLink></li>
+                    <li><NavLink to='myorders' >My Orders</NavLink></li>
+                    <li><NavLink to="addreview">Add Review</NavLink></li>
                     
                         </>
                     }
 
 
                     { admin && <>
-                    <li><Link to="dashboard/users">Users</Link></li>
-                    <li><Link to="dashboard/makeadmin">Make Admin</Link></li>
-                    <li><NavLink to="dashboard/addproduct">Add Product</NavLink></li>
-                    <li><NavLink to="dashboard/manageorders">Manage All Orders</NavLink></li>
-                    <li><NavLink to="dashboard/manageproducts">Manage All Products</NavLink></li>
+                    <li><Link to="users">Users</Link></li>
+                    <li><Link to="makeadmin">Make Admin</Link></li>
+                    <li><NavLink to="addproduct">Add Product</NavLink></li>
+                    <li><NavLink to="manageorders">Manage All Orders</NavLink></li>
+                    <li><NavLink to="manageproducts">Manage All Products</NavLink></li>
                    
                     </>
                     

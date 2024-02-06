@@ -27,13 +27,13 @@ const Navbar = () => {
         {/* <p className='rounded-lg mx-2 mt-3 lg:text-base sm:text-xs'>{user?.email}</p> */}
     </>
     return (
-        <div className="navbar bg-green-300 ">
+        <div className="navbar bg-green-300 w-full">
             <div className="navbar-start text-2xl mx-auto">
-                <div className="dropdown">
+                <div className="dropdown ">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>MANUBAR
                     </label>
-                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black-600 rounded-box w-[250px]">
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-blue-300 rounded-box w-full">
                         {menuItems}
                     </ul>
                 </div>

@@ -3,7 +3,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className='sm:w-[400px] lg:w-[700px] py-10 mb-10'>
+    <div className='max-w-lg min-w-80 py-10 mb-10'>
       <div className=' text-center pb-10'>
         <p className='text-3xl font-bold '>
          Please Contact 
@@ -13,15 +13,15 @@ const Contact = () => {
         <input
           type='text'
           placeholder='Email Address'
-          className='input lg:w-[700px] sm:w-[300px] '
+          className='input lg:w-[700px] md:w-[600px] sm:w-[300px] '
         />
         <input
           type='text'
           placeholder='Subject'
-          className='input lg:w-[700px] sm:w-[300px] '
+          className='input lg:w-[700px] md:w-[600px] sm:w-[300px] '
         />
         <textarea
-          className='textarea lg:w-[700px] sm:w-[300px] '
+          className='textarea lg:w-[700px] md:w-[600px] sm:w-[300px] '
           placeholder='Your message'
           rows={6}
         ></textarea>

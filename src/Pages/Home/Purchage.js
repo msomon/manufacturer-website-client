@@ -80,9 +80,9 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
 
 
   return (
-    <div className='w-full  grid lg:grid-cols-2   gap-10 justify-between mt-8 mb-5'>
-       <div className="card w-full  bg-base-100 shadow-2xl shadow-2yl ">
-  <figure className="px-10 pt-10">
+    <div className=' grid lg:grid-cols-2 md:grid-cols-2 gap-10 md:gap-5 justify-center mt-8 mb-5 sm:ms-2'>
+       <div className="card mx-auto buy max-w-lg min-w-80  bg-base-100 shadow-2xl shadow-2yl ">
+  <figure className="px-5 pt-10">
     <img src={img} alt="Shoes" className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
@@ -94,8 +94,8 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
   </div>
   </div>
 
-    <div className="card w-96 justify-center bg-base-100 shadow-2xl mx-auto">
-        <div className="card-body">
+    <div className="card buy sm:ms-2 lg:w-[550px] md:w-[320px] sm:w-[310px] justify-center bg-base-100 shadow-2xl mx-auto">
+        <div className="card-body lg:w-[540px] sm:w-[300px] items-center ">
             <h2 className="text-center text-2xl font-bold">Order Please</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 

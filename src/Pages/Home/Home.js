@@ -18,11 +18,12 @@ const Home = () => {
   // console.log(data);
   return (
 <div className='sm:mb-3'>
- <div className='carosel lg:w-[1500px] sm:w-[400px] lg:h-[450px]  sm:h-[200px] mx-auto '>
-<Carousel>
+ <div className='carosel sm:mx-0 sm:ms-1 mt-3 sm:p-1 mb-10 '>
+<Carousel className='max-w-7xl min-w-80 min-h-52 max-h-96 rounded-2xl mx-auto '>
   <Carousel.Item>
     <img
-      className="d-block lg:w-[1500px] sm:w-[400px] lg:h-[450px]  sm:h-[200px]"
+      className="d-block w-full max-h-96 rounded-2xl"
+      // sm:min-w-[320px] md:min-w-[740px] md:h-[450px] lg:h-[450px]  sm:h-[200px]
       src={img1}
       alt="First slide"
     />
@@ -33,7 +34,7 @@ const Home = () => {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block lg:w-[1500px] sm:w-[400px] lg:h-[450px]  sm:h-[200px]"
+      className="d-block w-full max-h-96 rounded-2xl"
       src={img2}
       alt="Second slide"
     />
@@ -45,7 +46,7 @@ const Home = () => {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="lg:w-[1500px] sm:w-[400px] lg:h-[450px]  sm:h-[200px]"
+      className="d-block w-full max-h-96 rounded-2xl"
       src={img3}
       alt="Third slide"
     />
@@ -58,12 +59,12 @@ const Home = () => {
 </Carousel>
 
 </div>
-<div>
+<div className='lg:mt-10 md:mt-48 sm:mt-0'>
 
-  <h3 className='text-center text-green-700 text-4xl font-bold mt-5'>Our Products </h3>
+  <h3 className='text-center text-green-700 text-4xl font-bold mt-5 md:mt-[50px]'>Our Products </h3>
 </div>
 
-   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-5 lg:my-16 sm:my-10 sm:mx-3'>
+   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-5 lg:my-16  sm:my-10 sm:mx-3'>
   
       {
         tools?.reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
@@ -79,7 +80,7 @@ const Home = () => {
  <div className='sm:mx-3'>
    <UpcomingProducts></UpcomingProducts>
  </div>
- <div className='bg-base-300 lg:w-full grid justify-items-center sm:w-[400px]'>
+ <div className='bg-base-300 grid justify-items-center w-full '>
   <Contact></Contact>
  </div>
  </div>

@@ -56,7 +56,7 @@ const Login = () => {
     // console.log(token);
 
     return (
-        <div className='flex justify-center items-center lg:mt-0 lg:mb-12 mb-5 '>
+        <div className='flex justify-center items-center lg:mt-5 lg:mb-12 sm:mt-2 mb-5 '>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body  pt-1 ">
                     <h2 className="text-center text-2xl font-bold mt-0 pt-0">Login</h2>

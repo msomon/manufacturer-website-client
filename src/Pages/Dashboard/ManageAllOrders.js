@@ -27,7 +27,7 @@ const ManageAllOrders = () => {
 
 
   return (
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 mt-7 gap-4 mb-5'>
+    <div className='grid lg:grid-cols-3 md:grid-cols-2 mt-10 gap-4 mb-5 '>
       {
         orders?.map(order=><AllOrder key={order._id} setOrders={setOrders} order={order}></AllOrder>)
       }
