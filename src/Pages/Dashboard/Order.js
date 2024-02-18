@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Order = ({order,setOrders}) => {
   const {name,user,email ,img,quantity,price,totalPrice,description,_id}= order
-  // console.log(order);
 
   const cancelOrder = id =>{
     
     const proceed = window.confirm('are you sure')
     if(proceed){
-      // console.log('user id',id);
     const url = `https://electronics-manufecture-website.onrender.com/cancelorder/${id}` ;
 
     fetch(url,{
@@ -18,15 +16,12 @@ const Order = ({order,setOrders}) => {
     .then(data =>{
       if(data.deletedCount > 0){
         const remaining = order.filter(inventory => inventory._id !== id)
-        console.log(remaining);
         setOrders(remaining)
       }
     })
     }
   }
 
-
-  // console.log(order);
   return (
     <div className="card w-full  bg-base-100 shadow-xl ">
   <figure className="px-10 pt-10">

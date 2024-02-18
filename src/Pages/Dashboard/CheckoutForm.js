@@ -3,8 +3,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
 const CheckoutForm = ({data}) => {
-  // console.log(data);
-const stripe = useStripe()
+  const stripe = useStripe()
 const elements =useElements()
 const[cardErr ,setCardErr] = useState('');
 const[success ,setSuccess] = useState('');
@@ -26,7 +25,6 @@ useEffect( ()=>{
   }) 
   .then(res=>res.json())
   .then(result=>{
-    // console.log(result.clientSecret);
 if(result?.clientSecret){
   setClintSecret(result?.clientSecret)
 }
@@ -54,7 +52,6 @@ if(result?.clientSecret){
       card 
 
     })
-    // console.log(error);
     setCardErr(error ? error.message : '')
     setSuccess('')
     setProcessing(true)
@@ -76,7 +73,6 @@ if(result?.clientSecret){
       setSuccess('')
       setProcessing(false)
     }else{
-      console.log(paymentIntent);
       setCardErr('')
       setTransactionId(paymentIntent?.id)
       setSuccess('Your Payment Is Completed')
@@ -97,7 +93,6 @@ if(result?.clientSecret){
       }).then(res=>res.json())
       .then(datas=>{
         setProcessing(false)
-        console.log(datas);
       })
     }
 

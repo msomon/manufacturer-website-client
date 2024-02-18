@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
+import Loading from "../Shared/Loading";
 
 const UseHooks = () => {
   const [tools,setTools] = useState([]);
 
 
 useEffect( ()=>{
+  if(!tools){
+    <Loading></Loading>
+  }
+
   fetch('https://electronics-manufecture-website.onrender.com/tools',
   {
     method: 'GET',
@@ -18,7 +23,6 @@ useEffect( ()=>{
 
 },[tools])
 
-//  console.log(tools);
   return {tools,setTools};
 };
 

@@ -19,7 +19,6 @@ if(isLoading){
   return <Loading></Loading>
 }
 
-// console.log(data);
 
   return (
     <div className='min-h-screen grid lg:grid-cols-2 gap-4 mb-5 mt-3'>

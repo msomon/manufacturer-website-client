@@ -1,17 +1,17 @@
 [
-  {"img":"https://i.ibb.co/sPqcj90/ram.jpg",
-    "name":"RAM",
+  {"img":"https://i.ibb.co/wdpjFFk/laptop.jpg",
+    "name":"Laptop",
     "description":"Use these Windows 10 commands to quickly find memory module information without taking the computer apart or using third-party apps. "
    
    },
-  {"img":"https://i.ibb.co/87C34nC/ssd.jpg",
-    "name":"SSD", 
+  {"img":"https://i.ibb.co/cCg0jvP/computer.jpg",
+    "name":"Computer", 
     "description":"Another useful bit of info is in the top-right corner, where it shows you the amount of data that has been written to the drive—in this instance, about 62TB. This is important to know since most SSDs. "
    
    },
-  {"img":"https://i.ibb.co/9svw7hS/processor.jpg",
-    "name":"PROCESSOR",
-    "description":"A processor is an integrated electronic circuit that performs the calculations that run a computer. A processor performs arithmetical, logical, input/output (I/O) and other basic instructions that are passed from an operating system (OS). "
+  {"img":"https://i.ibb.co/23D54P4/monitor.jpg",
+    "name":"Monitor",
+    "description":"Monitor is an integrated electronic circuit that performs the calculations that run a computer. A processor performs arithmetical, logical, input/output (I/O) and other basic instructions that are passed from an operating system (OS). "
    
    }
  

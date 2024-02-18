@@ -33,7 +33,6 @@ const Purchage = () => {
 
     
 const onSubmit = async (data) => {
-    // console.log(data.orderquantity,minimumOrder,availableQuantity);
     
 
 if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
@@ -66,7 +65,6 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
        })
        .then(res=>res.json())
        .then(resu=>{
-        //    console.log(resu)
         reset()
            toast('purchage confirm')
         })

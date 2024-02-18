@@ -7,7 +7,6 @@ const Product = ({product ,setTools}) => {
     
     const proceed = window.confirm('are you sure')
     if(proceed){
-      // console.log('user id',id);
     const url = `https://electronics-manufecture-website.onrender.com/deleteallproduct/${id}` ;
 
     fetch(url,{

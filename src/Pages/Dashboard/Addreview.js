@@ -11,14 +11,13 @@ const Addreview = () => {
   const { register,reset,formState: { errors }, handleSubmit } = useForm();
 
   const onSubmit = data => {
-    // console.log(data);
+
     const review = {
       email :user.email ,
       review : data.rating ,
       comment : data.comment
     }
     
-    // console.log(review);
 
   const url ='https://electronics-manufecture-website.onrender.com/addreview';
        
@@ -31,7 +30,6 @@ const Addreview = () => {
        })
        .then(res=>res.json())
        .then(resu=>{
-           console.log(resu)
         reset()
            toast('add review confirm')
         })
@@ -40,7 +38,7 @@ const Addreview = () => {
 
 
   return (
-    <div className=' mx-auto card w-70 lg:w-2/4  bg-base-100 shadow-xl px-6 mt-8 mb-8 pb-10'>
+    <div className=' mx-auto card max-w-lg min-w-80  bg-base-100 shadow-xl px-6 mt-8 mb-8 pb-10 flex justify-center items-center'>
       <h1 className='mt-3 text-2xl mb-4 text-secondary'> 👍 Please Add Review 👍 </h1>
       <form className='flex flex-col gap-2 ' onSubmit={handleSubmit(onSubmit)}>
       <label className="label">

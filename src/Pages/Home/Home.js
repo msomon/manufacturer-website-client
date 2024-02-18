@@ -5,25 +5,21 @@ import Tool from './Tool'
 import img1 from '../../images/carosel1.webp'
 import img2 from '../../images/carosel4.webp'
 import img3 from '../../images/carosel3.webp'
-import './Home.css'
-import Reviews from './Reviews'
 import UpcomingProducts from './UpcomingProducts';
 import Contact from './Contact';
+import About from './About';
 // import TopCustomer from './TopCustomer';
 
 const Home = () => {
-  const {tools,setTools} =UseHooks()
- 
+  const {tools} =UseHooks()
 
-  // console.log(data);
   return (
 <div className='sm:mb-3'>
- <div className='carosel sm:mx-0 sm:ms-1 mt-3 sm:p-1 mb-10 '>
-<Carousel className='max-w-7xl min-w-80 min-h-52 max-h-96 rounded-2xl mx-auto '>
+ <div className='carosel sm:mx-0 sm:ms-1 mt-3 sm:p-1 sm:mb-2 mb-10 '>
+<Carousel className='max-w-7xl min-w-80 sm:h-[220px] md:h-[300px] lg:h-[450px] rounded-2xl mx-auto '>
   <Carousel.Item>
     <img
-      className="d-block w-full max-h-96 rounded-2xl"
-      // sm:min-w-[320px] md:min-w-[740px] md:h-[450px] lg:h-[450px]  sm:h-[200px]
+      className="w-full sm:h-[220px] md:h-[300px] lg:h-[450px] rounded-2xl"
       src={img1}
       alt="First slide"
     />
@@ -34,48 +30,47 @@ const Home = () => {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-full max-h-96 rounded-2xl"
+      className=" w-full sm:h-[220px] md:h-[300px] lg:h-[450px] rounded-2xl"
       src={img2}
       alt="Second slide"
     />
 
     <Carousel.Caption>
-      <h3 className='text-yellow-500 lg:text-4xl'>New Product Collection </h3>
-      <p className='text-orange-600 lg:text-2xl'>Quality full Products</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-full max-h-96 rounded-2xl"
+      className=" w-full sm:h-[220px] md:h-[300px] lg:h-[450px] rounded-2xl"
       src={img3}
       alt="Third slide"
     />
 
     <Carousel.Caption>
-      <h3 className='text-fuchsia-600 lg:text-4xl'>Your Opinion My Commitment</h3>
-      <p className='text-red-400 lg:text-2xl'>Highly Good Maintainense </p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
 
 </div>
-<div className='lg:mt-10 md:mt-48 sm:mt-0'>
 
-  <h3 className='text-center text-green-700 text-4xl font-bold mt-5 md:mt-[50px]'>Our Products </h3>
-</div>
+<div className='sm:mx-3'>
 
-   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 gap-5 lg:my-16  sm:my-10 sm:mx-3'>
-  
-      {
-        tools?.reverse().map(tool=><Tool key={tool._id} tool={tool}></Tool>)
-      }
-  </div> 
-  <div className='sm:mx-3'>
-
- <Reviews></Reviews>
+ <About></About>
 
   </div>
 
+
+<div className='lg:mt-10  sm:mt-0'>
+  <h3 className='text-center text-green-700 text-4xl font-bold mb-3 mt-0 '>Our Products </h3>
+</div>
+
+   <div className=' grid  md:grid-cols-2 lg:grid-cols-3 sm:gap-2 lg:gap-8 justify-center items-center lg:mx-[200px] lg:my-16  sm:my-5 sm:mx-3'>
+
+  
+      {
+        tools?.map(tool=><Tool key={tool._id} tool={tool}></Tool>)
+      }
+  </div> 
+  
 
  <div className='sm:mx-3'>
    <UpcomingProducts></UpcomingProducts>

@@ -30,8 +30,6 @@ const MyProfile = () => {
   }
      
 
-// console.log(users);
-
   return (
     <div className=' w-70 sm:mx-4  lg:w-2/4 justify-between mt-8 mx-auto mb-3'>
       
@@ -42,7 +40,13 @@ const MyProfile = () => {
  <h2 className="card-title">Address: {profiles?.address}</h2>
  <h2 className="card-title">Number: {profiles?.number}</h2>
  <h2 className="card-title">Education: {profiles?.education}</h2>
- <button className='btn btn-primary'><Link to='/updatemyprofile'>ADD OR Update Your Profile</Link></button>
+ {
+  !user ? <button disabled className='btn btn-primary text-black'><Link to='/updatemyprofile'>Please Login</Link></button> :
+      <button className='btn btn-primary'><Link to='/updatemyprofile'>ADD OR Update Your Profile</Link></button>
+ }
+ 
+
+
 </div>
 
 </div>

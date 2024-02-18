@@ -17,7 +17,18 @@ import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import Payment from './Pages/Dashboard/Payment';
 import routes from "./routes/routes"
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import DashboardHome from './Pages/Dashboard/DashboardHome';
+
 function App() {
+ 
+  useEffect( ()=>{
+
+    AOS.init();
+
+  },[])
   
   return (
     <div className='mx-2  lg:px-2  mb-8'>
@@ -30,22 +41,25 @@ function App() {
 
 
 
-<Route path='/purchage/:id' element={<RequireAuth>
+{ <Route path='/purchage/:id' element={<RequireAuth>
   <Purchage/>
-</RequireAuth>}></Route>
+</RequireAuth>}></Route> }
+
 <Route path='dashboard' element={<RequireAuth>
   <Dashboard/>
 </RequireAuth>}>
-<Route index element={<Users/>}></Route>
+
+<Route index element={<DashboardHome/>}></Route>
 <Route path='myorders' element={<RequireAuth>
   <Myorders/>
 </RequireAuth>}></Route>
 <Route path='payment/:id' element={<RequireAuth>
   <Payment/>
 </RequireAuth>}></Route>
-<Route path='dashboard/addreview' element={<RequireAuth>
+<Route path='addreview' element={<RequireAuth>
   <Addreview/>
 </RequireAuth>}></Route>
+
 <Route path='users' element={<RequireAdmin>
   <Users/>
 </RequireAdmin>}></Route>

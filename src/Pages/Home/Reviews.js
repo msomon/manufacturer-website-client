@@ -19,7 +19,6 @@ const Reviews = () => {
     return <Loading></Loading>
   }
 
-// console.log(reviews);
   return ( 
    <div>
       <h1 className='text-center text-3xl text-primary mt-3 mb-3'>OUR CUSTOMER REVIEWS </h1>

@@ -1,15 +1,14 @@
 import React from 'react';
 
 const allOrder = ({order,setOrders}) => {
-  // console.log(order.email);
   const {name,email,user,img,quantity,price,totalPrice,description,_id}= order
-  // console.log(order);
+
 
   const cancelAllOrder = id =>{
     
     const proceed = window.confirm('are you sure')
     if(proceed){
-      // console.log('user id',id);
+    
     const url = `https://electronics-manufecture-website.onrender.com/cancelallorder/${id}` ;
 
     fetch(url,{

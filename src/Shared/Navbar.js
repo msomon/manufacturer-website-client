@@ -3,8 +3,8 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
-
 const Navbar = () => {
+    
 
     const [user] = useAuthState(auth);
 
@@ -14,15 +14,15 @@ const Navbar = () => {
     };
 
     const menuItems = <>
-        <li><NavLink to="/home">Home</NavLink></li>
+        <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/blogs">Blogs</NavLink></li>
         <li><NavLink to="/reviews">Reviews</NavLink></li>
-        <li><NavLink to="/myportfolio">My Portfolio</NavLink></li>
         <li><NavLink to="/myprofile">My Profile</NavLink></li>
         {
             user &&  <li className='sm:hidden lg:block'><NavLink  to="/dashboard">Dashboard</NavLink></li>
         }
-        <li><NavLink to="/businesssummary">Bussiness Summary</NavLink></li>
+        
+
         <li>{user ? <button className="btn font-bold btn-ghost mt-1 text-[16px]" onClick={logout} >Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
         {/* <p className='rounded-lg mx-2 mt-3 lg:text-base sm:text-xs'>{user?.email}</p> */}
     </>

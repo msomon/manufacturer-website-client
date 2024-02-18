@@ -43,7 +43,6 @@ const Dashboard = () => {
 
                     { admin && <>
                     <li><Link to="users">Users</Link></li>
-                    <li><Link to="makeadmin">Make Admin</Link></li>
                     <li><NavLink to="addproduct">Add Product</NavLink></li>
                     <li><NavLink to="manageorders">Manage All Orders</NavLink></li>
                     <li><NavLink to="manageproducts">Manage All Products</NavLink></li>

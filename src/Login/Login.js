@@ -42,7 +42,6 @@ const Login = () => {
 
     const resetPassword =async()=>{
         const email = watch('email');
-        // console.log(email);
         await sendPasswordResetEmail(email);
         toast('Reset email');
       }
@@ -52,8 +51,6 @@ const Login = () => {
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
     }
-
-    // console.log(token);
 
     return (
         <div className='flex justify-center items-center lg:mt-5 lg:mb-12 sm:mt-2 mb-5 '>

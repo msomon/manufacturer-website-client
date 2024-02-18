@@ -19,7 +19,6 @@ const UpdateMyProfile = () => {
        number : data.number ,
        education: data.education
    }
-//    console.log(profiledata);
    const url = `https://electronics-manufecture-website.onrender.com/user/updatemyprofile/${user.email}`;
    
    fetch(url,{
@@ -32,7 +31,6 @@ const UpdateMyProfile = () => {
    .then(res=>res.json())
    .then(resu=>{
      reset()
-       console.log(resu)
        toast('Update Profile Successfully')
     
     })   

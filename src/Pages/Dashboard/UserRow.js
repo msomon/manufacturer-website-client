@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 
 const UserRow = ({ user, refetch ,index }) => {
     const { email,role} = user;
-    // console.log(user);
 
     const makeAdmin = () => {
         fetch(`https://electronics-manufecture-website.onrender.com/users/admin/${email}`, {
@@ -27,15 +26,20 @@ const UserRow = ({ user, refetch ,index }) => {
     }
 
     return (
-        <tr>
-            <th>{index +1 }</th>
-           
-            <td>{email}</td>
-            
+
+
+
+
+        
+        <tr className=''>
+            <td className='lg:pl-3 sm:pl-0'>{email}</td>
             <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs btn-secondary">Make Admin</button> :
-            <button className="btn btn-xs btn-accent">Already Admin</button>
+            <button className="btn sm:text-xs text-md btn-xs btn-accent">Already Admin</button>
             }</td>
-            <td><button className="btn btn-xs btn-primary">Remove User</button></td>
+            {
+                <td><button className="btn btn-xs btn-primary sm:hidden md:block lg:block">Remove User</button></td>
+
+            }
         </tr>
     );
 };
