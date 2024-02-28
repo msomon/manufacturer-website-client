@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useAdmin from '../../Hooks/useAdmin';
+import { Rating } from 'primereact/rating';
 
 const Addreview = () => {
   const [user] = useAuthState(auth);
   const {admin} =useAdmin(user)
   const { register,reset,formState: { errors }, handleSubmit } = useForm();
+   const [value,setValue] =useState()
+
 
   const onSubmit = data => {
+    
 
     const review = {
       email :user.email ,
-      review : data.rating ,
+      review : value ,
       comment : data.comment
     }
     
+  
 
   const url ='https://electronics-manufecture-website.onrender.com/addreview';
        
@@ -49,16 +54,14 @@ const Addreview = () => {
       <label className="label">
     <span className="label-text">Rating</span>
   </label>
-      <input {...register("rating" ,{
-         max:{
-          value:'5',
-      message:'× You Can Not Give Over 5 Star × '
-  }
-      })} type="number" placeholder="Type here rating" className="input input-bordered w-full max-w-xs"  required/>
 
-      <label className="label">
-      {errors.Rating?.type === 'max' && <span className="label-text-alt text-red-500">{errors.Rating.message}</span>}
-       </label>
+
+<span className=''>
+
+<Rating className='gap-3 font-bold h-14 p-3  text-3xl text-yellow-600 ml-4'  value={value} onChange={(e) => setValue(e.target.value) } cancel={false} />
+
+</span>
+  
 
       <label className="label">
     <span className="label-text">Comment</span>

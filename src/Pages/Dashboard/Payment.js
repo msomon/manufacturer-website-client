@@ -24,7 +24,7 @@ if(isLoading){
     <div className='min-h-screen grid lg:grid-cols-2 gap-4 mb-5 mt-3'>
      <div class="card w-full bg-base-100 shadow-xl">
   <figure class="px-10 pt-10">
-    <img src={data?.img} alt="Shoes" class="rounded-xl" />
+    <img className='rounded-xl lg:w-[400px] h-[200px]' src={data?.img} alt="Shoes" class="rounded-xl" />
   </figure>
   <div class="card-body items-center text-center">
     <h2 class="card-title">Pay For :{data.name}</h2>

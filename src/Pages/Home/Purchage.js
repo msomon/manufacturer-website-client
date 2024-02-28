@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../../Shared/Loading';
@@ -12,6 +12,7 @@ const Purchage = () => {
   const {id} = useParams()
   const { register,reset ,formState: { errors }, handleSubmit } = useForm();
   const [user] =useAuthState(auth)
+  const Navigate = useNavigate()
 //   const [quantity,setQuantity]= useState(false)
   
   const {data,isLoading}=useQuery('tool',()=>
@@ -66,8 +67,9 @@ if(data.orderquantity < minimumOrder && data.orderquantity > availableQuantity){
        .then(res=>res.json())
        .then(resu=>{
         reset()
-           toast('purchage confirm')
-        })
+           toast('purchage confirm Please Pay Your Money')
+          Navigate("/dashboard/myorders")
+        } )
          
     }
     
