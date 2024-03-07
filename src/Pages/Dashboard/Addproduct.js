@@ -18,9 +18,12 @@ const Addproduct = (event) => {
 
      const url = 'https://electronics-manufecture-website.onrender.com/addproduct'
      const res = await axios.post(url,serviceData)
-     reset()
-     setImageUrl("")
-     toast.success('Add Item Succesfully')
+     if(res.data){
+       reset()
+       setImageUrl("")
+       toast.success('Add Item Succesfully')
+
+     }
     
 
   }

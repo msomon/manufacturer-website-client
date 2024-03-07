@@ -2,46 +2,29 @@ import React from 'react';
 
 const Blogs = () => {
   return (
-    <div className='lg:h-4/5 sm:my-10 lg:mx-20 lg:py-10'>
-      Ans1 = ptimizing application performance is key for developers who are mindful of keeping a user’s experience positive to keep them on an app and engaged.Keeping component state local where necessary
-      Memoizing React components to prevent unnecessary re-renders
-      Code-splitting in React using dynamic import()
-
-
-
-
-      Ans2 =The Four Kinds of React State to Manage like 
-      (a) Local (UI) state – Local state is data we manage in one or another component.
-      Local state is most often managed in React using the useState hook
-      (b)=Global state is necessary when we want to get and update data anywhere in our app, or in multiple components at least.
-
-
-
-
-      A common example of global state is authenticated user state.
-      (c)=Server state – Data that comes from an external server that must be integrated with our UI state.
-      Server state is a simple concept, but can be hard to manage alongside all of 
-      (d)= URL state – Data that exists on our URLs, including the pathname and query parameters.URL state is often missing as a category of state, but it is an important one.
-
-
-
+    <div className='lg:h-4/5 sm:my-10 lg:mx-20 lg:py-10 min-h-80'>
       
-      Ans3 =JavaScript is a prototype-based, Object Oriented programming language. After the ES6 updates, JavaScript allowed for “prototypal inheritance”, meaning that objects and methods can be shared, extended, and copied.
-      Sharing amid objects makes for easy inheritance of structure (data fields), behavior     (functions / methods), and state (data values).
+      <h1 className='text-xl font-bold py-4 text-center'> Title: Exploring the Wonders of Electronics: A Journey Through the Electronics Store </h1>
 
+<p className='tracking-wide leading-8'> In today's fast-paced world, electronics have become an integral part of our daily lives. From smartphones to laptops, smartwatches to home automation devices, the realm of electronics continues to evolve, offering us innovative solutions to simplify tasks and enhance our connectivity. And where do we find these marvels of technology? In the vibrant aisles of the electronics store.
 
+Stepping into an electronics store is like embarking on a journey into the future. The air hums with anticipation as customers peruse shelves lined with the latest gadgets and gizmos. From the moment you walk through the doors, you're greeted by a dazzling array of products, each promising to revolutionize the way we live, work, and play.
 
+One of the most captivating aspects of an electronics store is its sheer diversity. Whether you're a tech enthusiast seeking the latest advancements or a casual shopper looking for everyday essentials, there's something for everyone. From cutting-edge smartphones boasting state-of-the-art features to sleek laptops designed for productivity on the go, the options are limitless.
 
-      Ans4 = Mutating state directly can lead to odd bugs, and components that are hard to optimize.As you may already know, a common way to tune a React component for performance is to make itwhich causes it to only re-render when its props change (instead of every time its parent re-renders).So there you go: that’s why you shouldn’t mutate state, even if you immediately call setState. Optimized components might not re-render
+But it's not just about the products themselves; it's the experience of discovery that makes visiting an electronics store so exhilarating. As you wander through the aisles, you're treated to hands-on demonstrations, interactive displays, and knowledgeable staff eager to assist you in finding the perfect device to suit your needs.
 
+For many, the allure of the electronics store lies in its ability to spark creativity and inspire innovation. Whether you're a hobbyist tinkering with DIY electronics projects or a budding entrepreneur with dreams of launching the next big tech startup, the store serves as a haven for imagination and ingenuity.
 
+Beyond the products themselves, the electronics store is also a hub of technological expertise. With staff trained to provide insights into product specifications, troubleshooting tips, and personalized recommendations, it's more than just a retail space—it's a resource for expanding your understanding of the ever-evolving world of technology.
 
-      Ans5 = A common task will be searching the array to find if it contains a value (or values) that satisfies certain search criteria. Depending on the task at hand, you may be interested in a boolean value for confirmation. we can find   products.name.includes("thick scales").
-      it is very easy to find the product name .
+Moreover, the electronics store serves as a community gathering place, where like-minded individuals come together to share their passion for all things tech. Whether it's attending workshops and seminars or simply striking up conversations with fellow enthusiasts, the store fosters connections and fosters a sense of belonging in an increasingly digital world.
 
-      
-      
-      Ans 6 =UNIT TESTING is a type of software testing where individual units or components of a software are tested. The purpose is to validate that each unit of the software code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness.
+Of course, no discussion of the electronics store would be complete without acknowledging the role of online shopping in today's marketplace. While digital storefronts offer convenience and accessibility, there's something undeniably special about the tactile experience of browsing through physical products and engaging with knowledgeable staff face-to-face.
+
+In essence, the electronics store represents more than just a place to buy gadgets—it's a celebration of human innovation and technological progress. As we continue to push the boundaries of what's possible, these stores remain beacons of inspiration, reminding us of the endless possibilities that await us in the world of electronics.
+
+So the next time you find yourself in need of a new device or simply seeking a dose of technological wonder, step inside your local electronics store and prepare to be amazed. Who knows what marvels you'll discover within its walls? </p>
     </div>
   );
 };

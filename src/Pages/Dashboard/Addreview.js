@@ -34,7 +34,7 @@ const Addreview = () => {
            body: JSON.stringify(review)
        })
        .then(res=>res.json())
-       .then(resu=>{
+       .then(res=>{
         reset()
            toast('add review confirm')
         })

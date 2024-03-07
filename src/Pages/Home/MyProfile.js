@@ -31,9 +31,9 @@ const MyProfile = () => {
      
 
   return (
-    <div className=' w-70 sm:mx-4  lg:w-2/4 justify-between mt-8 mx-auto mb-3'>
+    <div className=' w-70 sm:mx-4  min-h-96 lg:w-2/5 justify-between mt-10  mx-auto mb-3'>
       
-    <div className="card w-full  bg-base-100 shadow-2xl shadow-2yl "><h3 className='text-center mt-3 text-3xl text-green-500 '>🌹 My Profile 🌹</h3>
+    <div className="card w-full mt-10 lg:mt-20  bg-base-100 shadow-2xl shadow-2yl "><h3 className='text-center mt-3 text-3xl text-green-500 '>🌹 My Profile 🌹</h3>
 <div className="card-body items-center text-center">
 <h2 className="card-title">Name:{profiles?.user}</h2>
  <h2 className="card-title">Email: {user?.email}</h2> 
